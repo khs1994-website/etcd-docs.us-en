@@ -1,4 +1,4 @@
-# [distribution 英文文档](https://github.com/etcd-io/website)
+# [etcd 英文文档](https://github.com/etcd-io/website)
 
 - Benchmarks
   * [Benchmarks](benchmarks/_index.md)
