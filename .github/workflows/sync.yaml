@@ -18,7 +18,7 @@ jobs:
         include:
           - SRC_FOLDER: 'content/en/docs/v3.5'
             GIT_URL: 'https://github.com/etcd-io/website'
-            GITBOOK_TITLE: '[distribution 英文文档](https://github.com/etcd-io/website)'
+            GITBOOK_TITLE: '[etcd 英文文档](https://github.com/etcd-io/website)'
             USER_AND_REPO: 'etcd-io/website'
     steps:
       - uses: actions/checkout@master
