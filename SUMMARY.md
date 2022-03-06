@@ -35,8 +35,11 @@
   * [Glossary](learning/glossary.md)
   * [Etcd Versus Other Key Value Stores](learning/why.md)
 - Op Guide
+  - Authentication
+    * [Authentication Guides](op-guide/authentication/_index.md)
+    * [Authentication](op-guide/authentication/authentication.md)
+    * [Role Based Access Control](op-guide/authentication/rbac.md)
   * [Operations Guide](op-guide/_index.md)
-  * [Role Based Access Control](op-guide/authentication.md)
   * [Clustering Guide](op-guide/clustering.md)
   * [Configuration Flags](op-guide/configuration.md)
   * [Run Etcd Clusters Inside Containers](op-guide/container.md)
@@ -54,15 +57,25 @@
   * [Supported Platforms](op-guide/supported-platform.md)
   * [Migrate Applications From Using API V 2 To API V 3](op-guide/v2-migration.md)
   * [Versioning](op-guide/versioning.md)
-- Platforms
-  * [Platforms](platforms/_index.md)
-  * [Amazon Web Services](platforms/aws.md)
-  * [Container Linux With Systemd](platforms/container-linux-systemd.md)
-  * [Free BSD](platforms/freebsd.md)
 - Triage
   * [Triage](triage/_index.md)
   * [Issue Triage Guidelines](triage/issues.md)
   * [PR Management](triage/PRs.md)
+- Tutorials
+  * [Tutorials](tutorials/_index.md)
+  * [How To Access Etcd](tutorials/how-to-access-etcd.md)
+  * [How To Check Cluster Status](tutorials/how-to-check-cluster-status.md)
+  * [How To Conduct Leader Election In Etcd Cluster](tutorials/how-to-conduct-elections.md)
+  * [How To Create Lease](tutorials/how-to-create-lease.md)
+  * [How To Create Locks](tutorials/how-to-create-locks.md)
+  * [How To Add And Remove Members](tutorials/how-to-deal-with-membership.md)
+  * [How To Delete Keys](tutorials/how-to-delete-keys.md)
+  * [How To Get Keys By Prefix](tutorials/how-to-get-key-by-prefix.md)
+  * [How To Migrate Etcd From V 2 To V 3](tutorials/how-to-migrate.md)
+  * [How To Save The Database](tutorials/how-to-save-database.md)
+  * [How To Set Up A Demo Etcd Cluster](tutorials/how-to-setup-cluster.md)
+  * [How To Make Multiple Writes In A Transaction](tutorials/how-to-transactional-write.md)
+  * [How To Watch Keys](tutorials/how-to-watch-keys.md)
 - Upgrades
   * [Upgrading](upgrades/_index.md)
   * [Upgrade etcd from 2.3 to 3.0](upgrades/upgrade_3_0.md)
