@@ -43,6 +43,7 @@
   * [Clustering Guide](op-guide/clustering.md)
   * [Configuration Flags](op-guide/configuration.md)
   * [Run Etcd Clusters Inside Containers](op-guide/container.md)
+  * [Data Corruption](op-guide/data_corruption.md)
   * [Failure Modes](op-guide/failures.md)
   * [Etcd Gateway](op-guide/gateway.md)
   * [G RPC Proxy](op-guide/grpc_proxy.md)
