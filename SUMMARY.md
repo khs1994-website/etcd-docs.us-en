@@ -14,6 +14,7 @@
   * [API Reference Concurrency](dev-guide/api_concurrency_reference_v3.md)
   * [Why G RPC Gateway](dev-guide/api_grpc_gateway.md)
   * [API Reference](dev-guide/api_reference_v3.md)
+  * [Discovery Service Protocol](dev-guide/discovery_protocol.md)
   * [Experimental AP Is And Features](dev-guide/experimental_apis.md)
   * [G RPC Naming And Discovery](dev-guide/grpc_naming.md)
   * [Interacting With Etcd](dev-guide/interacting_v3.md)
