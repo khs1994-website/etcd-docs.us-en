@@ -1,0 +1,1664 @@
+
+<!DOCTYPE HTML>
+<html lang="us-en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Etcd Versus Other Key Value Stores · etcd 英文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="History and use of etcd & comparison with other tools">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="glossary.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://docs.khs1994.com" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" >
+            
+                <span>
+            
+                    
+                    Benchmarks
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../benchmarks/_index.html">
+            
+                <a href="../benchmarks/_index.html">
+            
+                    
+                    Benchmarks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../benchmarks/etcd-2-1-0-alpha-benchmarks.html">
+            
+                <a href="../benchmarks/etcd-2-1-0-alpha-benchmarks.html">
+            
+                    
+                    Benchmarking etcd v2.1.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../benchmarks/etcd-2-2-0-benchmarks.html">
+            
+                <a href="../benchmarks/etcd-2-2-0-benchmarks.html">
+            
+                    
+                    Benchmarking etcd v2.2.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../benchmarks/etcd-2-2-0-rc-benchmarks.html">
+            
+                <a href="../benchmarks/etcd-2-2-0-rc-benchmarks.html">
+            
+                    
+                    Benchmarking etcd v2.2.0-rc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../benchmarks/etcd-2-2-0-rc-memory-benchmarks.html">
+            
+                <a href="../benchmarks/etcd-2-2-0-rc-memory-benchmarks.html">
+            
+                    
+                    Benchmarking etcd v2.2.0-rc-memory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="../benchmarks/etcd-3-demo-benchmarks.html">
+            
+                <a href="../benchmarks/etcd-3-demo-benchmarks.html">
+            
+                    
+                    Benchmarking Etcd V 3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="../benchmarks/etcd-3-watch-memory-benchmark.html">
+            
+                <a href="../benchmarks/etcd-3-watch-memory-benchmark.html">
+            
+                    
+                    Watch Memory Usage Benchmark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.8" data-path="../benchmarks/etcd-storage-memory-benchmark.html">
+            
+                <a href="../benchmarks/etcd-storage-memory-benchmark.html">
+            
+                    
+                    Storage Memory Usage Benchmark
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Dev Guide
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../dev-guide/_index.html">
+            
+                <a href="../dev-guide/_index.html">
+            
+                    
+                    Developer Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../dev-guide/api_concurrency_reference_v3.html">
+            
+                <a href="../dev-guide/api_concurrency_reference_v3.html">
+            
+                    
+                    API Reference Concurrency
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../dev-guide/api_grpc_gateway.html">
+            
+                <a href="../dev-guide/api_grpc_gateway.html">
+            
+                    
+                    Why G RPC Gateway
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../dev-guide/api_reference_v3.html">
+            
+                <a href="../dev-guide/api_reference_v3.html">
+            
+                    
+                    API Reference
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../dev-guide/discovery_protocol.html">
+            
+                <a href="../dev-guide/discovery_protocol.html">
+            
+                    
+                    Discovery Service Protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../dev-guide/experimental_apis.html">
+            
+                <a href="../dev-guide/experimental_apis.html">
+            
+                    
+                    Experimental AP Is And Features
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../dev-guide/grpc_naming.html">
+            
+                <a href="../dev-guide/grpc_naming.html">
+            
+                    
+                    G RPC Naming And Discovery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../dev-guide/interacting_v3.html">
+            
+                <a href="../dev-guide/interacting_v3.html">
+            
+                    
+                    Interacting With Etcd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../dev-guide/limit.html">
+            
+                <a href="../dev-guide/limit.html">
+            
+                    
+                    System Limits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../dev-guide/local_cluster.html">
+            
+                <a href="../dev-guide/local_cluster.html">
+            
+                    
+                    Set Up A Local Cluster
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Dev Internal
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../dev-internal/discovery_protocol.html">
+            
+                <a href="../dev-internal/discovery_protocol.html">
+            
+                    
+                    Discovery Service Protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../dev-internal/logging.html">
+            
+                <a href="../dev-internal/logging.html">
+            
+                    
+                    Logging Conventions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../dev-internal/modules.html">
+            
+                <a href="../dev-internal/modules.html">
+            
+                    
+                    Golang Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../dev-internal/release.html">
+            
+                <a href="../dev-internal/release.html">
+            
+                    
+                    Etcd Release Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Learning
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="_index.html">
+            
+                <a href="_index.html">
+            
+                    
+                    Learning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="api_guarantees.html">
+            
+                <a href="api_guarantees.html">
+            
+                    
+                    KV API Guarantees
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="api.html">
+            
+                <a href="api.html">
+            
+                    
+                    Etcd 3 API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="data_model.html">
+            
+                <a href="data_model.html">
+            
+                    
+                    Data Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="design-auth-v3.html">
+            
+                <a href="design-auth-v3.html">
+            
+                    
+                    Etcd V 3 Authentication Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="design-client.html">
+            
+                <a href="design-client.html">
+            
+                    
+                    Etcd Client Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="design-learner.html">
+            
+                <a href="design-learner.html">
+            
+                    
+                    Etcd Learner Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="glossary.html">
+            
+                <a href="glossary.html">
+            
+                    
+                    Glossary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.9" data-path="why.html">
+            
+                <a href="why.html">
+            
+                    
+                    Etcd Versus Other Key Value Stores
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Op Guide
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" >
+            
+                <span>
+            
+                    
+                    Authentication
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../op-guide/authentication/_index.html">
+            
+                <a href="../op-guide/authentication/_index.html">
+            
+                    
+                    Authentication Guides
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../op-guide/authentication/authentication.html">
+            
+                <a href="../op-guide/authentication/authentication.html">
+            
+                    
+                    Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="../op-guide/authentication/rbac.html">
+            
+                <a href="../op-guide/authentication/rbac.html">
+            
+                    
+                    Role Based Access Control
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../op-guide/_index.html">
+            
+                <a href="../op-guide/_index.html">
+            
+                    
+                    Operations Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../op-guide/clustering.html">
+            
+                <a href="../op-guide/clustering.html">
+            
+                    
+                    Clustering Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../op-guide/configuration.html">
+            
+                <a href="../op-guide/configuration.html">
+            
+                    
+                    Configuration Flags
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../op-guide/container.html">
+            
+                <a href="../op-guide/container.html">
+            
+                    
+                    Run Etcd Clusters Inside Containers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../op-guide/data_corruption.html">
+            
+                <a href="../op-guide/data_corruption.html">
+            
+                    
+                    Data Corruption
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../op-guide/failures.html">
+            
+                <a href="../op-guide/failures.html">
+            
+                    
+                    Failure Modes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../op-guide/gateway.html">
+            
+                <a href="../op-guide/gateway.html">
+            
+                    
+                    Etcd Gateway
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../op-guide/grpc_proxy.html">
+            
+                <a href="../op-guide/grpc_proxy.html">
+            
+                    
+                    G RPC Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../op-guide/hardware.html">
+            
+                <a href="../op-guide/hardware.html">
+            
+                    
+                    Hardware Recommendations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../op-guide/maintenance.html">
+            
+                <a href="../op-guide/maintenance.html">
+            
+                    
+                    Maintenance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../op-guide/monitoring.html">
+            
+                <a href="../op-guide/monitoring.html">
+            
+                    
+                    Monitoring Etcd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="../op-guide/performance.html">
+            
+                <a href="../op-guide/performance.html">
+            
+                    
+                    Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14" data-path="../op-guide/recovery.html">
+            
+                <a href="../op-guide/recovery.html">
+            
+                    
+                    Disaster Recovery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15" data-path="../op-guide/runtime-configuration.html">
+            
+                <a href="../op-guide/runtime-configuration.html">
+            
+                    
+                    Runtime Reconfiguration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16" data-path="../op-guide/runtime-reconf-design.html">
+            
+                <a href="../op-guide/runtime-reconf-design.html">
+            
+                    
+                    Design Of Runtime Reconfiguration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.17" data-path="../op-guide/security.html">
+            
+                <a href="../op-guide/security.html">
+            
+                    
+                    Transport Security Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.18" data-path="../op-guide/supported-platform.html">
+            
+                <a href="../op-guide/supported-platform.html">
+            
+                    
+                    Supported Platforms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.19" data-path="../op-guide/v2-migration.html">
+            
+                <a href="../op-guide/v2-migration.html">
+            
+                    
+                    Migrate Applications From Using API V 2 To API V 3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.20" data-path="../op-guide/versioning.html">
+            
+                <a href="../op-guide/versioning.html">
+            
+                    
+                    Versioning
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Triage
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../triage/_index.html">
+            
+                <a href="../triage/_index.html">
+            
+                    
+                    Triage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../triage/issues.html">
+            
+                <a href="../triage/issues.html">
+            
+                    
+                    Issue Triage Guidelines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../triage/PRs.html">
+            
+                <a href="../triage/PRs.html">
+            
+                    
+                    PR Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../tutorials/_index.html">
+            
+                <a href="../tutorials/_index.html">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../tutorials/how-to-access-etcd.html">
+            
+                <a href="../tutorials/how-to-access-etcd.html">
+            
+                    
+                    How To Access Etcd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../tutorials/how-to-check-cluster-status.html">
+            
+                <a href="../tutorials/how-to-check-cluster-status.html">
+            
+                    
+                    How To Check Cluster Status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../tutorials/how-to-conduct-elections.html">
+            
+                <a href="../tutorials/how-to-conduct-elections.html">
+            
+                    
+                    How To Conduct Leader Election In Etcd Cluster
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../tutorials/how-to-create-lease.html">
+            
+                <a href="../tutorials/how-to-create-lease.html">
+            
+                    
+                    How To Create Lease
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../tutorials/how-to-create-locks.html">
+            
+                <a href="../tutorials/how-to-create-locks.html">
+            
+                    
+                    How To Create Locks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../tutorials/how-to-deal-with-membership.html">
+            
+                <a href="../tutorials/how-to-deal-with-membership.html">
+            
+                    
+                    How To Add And Remove Members
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../tutorials/how-to-delete-keys.html">
+            
+                <a href="../tutorials/how-to-delete-keys.html">
+            
+                    
+                    How To Delete Keys
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="../tutorials/how-to-get-key-by-prefix.html">
+            
+                <a href="../tutorials/how-to-get-key-by-prefix.html">
+            
+                    
+                    How To Get Keys By Prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="../tutorials/how-to-migrate.html">
+            
+                <a href="../tutorials/how-to-migrate.html">
+            
+                    
+                    How To Migrate Etcd From V 2 To V 3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.11" data-path="../tutorials/how-to-save-database.html">
+            
+                <a href="../tutorials/how-to-save-database.html">
+            
+                    
+                    How To Save The Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.12" data-path="../tutorials/how-to-setup-cluster.html">
+            
+                <a href="../tutorials/how-to-setup-cluster.html">
+            
+                    
+                    How To Set Up A Demo Etcd Cluster
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.13" data-path="../tutorials/how-to-transactional-write.html">
+            
+                <a href="../tutorials/how-to-transactional-write.html">
+            
+                    
+                    How To Make Multiple Writes In A Transaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.14" data-path="../tutorials/how-to-watch-keys.html">
+            
+                <a href="../tutorials/how-to-watch-keys.html">
+            
+                    
+                    How To Watch Keys
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Upgrades
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../upgrades/_index.html">
+            
+                <a href="../upgrades/_index.html">
+            
+                    
+                    Upgrading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../upgrades/upgrade_3_0.html">
+            
+                <a href="../upgrades/upgrade_3_0.html">
+            
+                    
+                    Upgrade etcd from 2.3 to 3.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../upgrades/upgrade_3_1.html">
+            
+                <a href="../upgrades/upgrade_3_1.html">
+            
+                    
+                    Upgrade etcd from 3.0 to 3.1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../upgrades/upgrade_3_2.html">
+            
+                <a href="../upgrades/upgrade_3_2.html">
+            
+                    
+                    Upgrade etcd from 3.1 to 3.2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../upgrades/upgrade_3_3.html">
+            
+                <a href="../upgrades/upgrade_3_3.html">
+            
+                    
+                    Upgrade etcd from 3.2 to 3.3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../upgrades/upgrade_3_4.html">
+            
+                <a href="../upgrades/upgrade_3_4.html">
+            
+                    
+                    Upgrade etcd from 3.3 to 3.4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../upgrades/upgrade_3_5.html">
+            
+                <a href="../upgrades/upgrade_3_5.html">
+            
+                    
+                    Upgrade etcd from 3.4 to 3.5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../upgrades/upgrading-etcd.html">
+            
+                <a href="../upgrades/upgrading-etcd.html">
+            
+                    
+                    Upgrading Etcd Clusters And Applications
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../branch_management.html">
+            
+                <a href="../branch_management.html">
+            
+                    
+                    Branch Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../demo.html">
+            
+                <a href="../demo.html">
+            
+                    
+                    Demo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../faq.html">
+            
+                <a href="../faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../install.html">
+            
+                <a href="../install.html">
+            
+                    
+                    Install
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../integrations.html">
+            
+                <a href="../integrations.html">
+            
+                    
+                    Libraries And Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../metrics.html">
+            
+                <a href="../metrics.html">
+            
+                    
+                    Metrics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../quickstart.html">
+            
+                <a href="../quickstart.html">
+            
+                    
+                    Quickstart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    v3.5 docs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../reporting_bugs.html">
+            
+                <a href="../reporting_bugs.html">
+            
+                    
+                    Reporting Bugs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../tuning.html">
+            
+                <a href="../tuning.html">
+            
+                    
+                    Tuning
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Etcd Versus Other Key Value Stores</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>The name &quot;etcd&quot; originated from two ideas, the unix &quot;/etc&quot; folder and &quot;d&quot;istributed systems. The &quot;/etc&quot; folder is a place to store configuration data for a single system whereas etcd stores configuration information for large scale distributed systems. Hence, a &quot;d&quot;istributed &quot;/etc&quot; is &quot;etcd&quot;.</p>
+<p>etcd is designed as a general substrate for large scale distributed systems. These are systems that will never tolerate split-brain operation and are willing to sacrifice availability to achieve this end. etcd stores metadata in a consistent and fault-tolerant way. An etcd cluster is meant to provide key-value storage with best of class stability, reliability, scalability and performance.</p>
+<p>Distributed systems use etcd as a consistent key-value store for configuration management, service discovery, and coordinating distributed work. Many <a href="https://github.com/etcd-io/etcd/blob/master/ADOPTERS.md" target="_blank">organizations</a> use etcd to implement production systems such as container schedulers, service discovery services, and distributed data storage. Common distributed patterns using etcd include <a href="https://github.com/etcd-io/etcd/blob/master/etcdctl/README.md#elect-options-election-name-proposal" target="_blank">leader election</a>, <a href="https://github.com/etcd-io/etcd/blob/master/etcdctl/README.md#lock-options-lockname-command-arg1-arg2-" target="_blank">distributed locks</a>, and monitoring machine liveness.</p>
+<h2 id="use-cases">Use cases</h2>
+<ul>
+<li>Container Linux by CoreOS: Applications running on <a href="https://coreos.com/why" target="_blank">Container Linux</a> get automatic, zero-downtime Linux kernel updates. Container Linux uses <a href="https://github.com/coreos/locksmith" target="_blank">locksmith</a> to coordinate updates. Locksmith implements a distributed semaphore over etcd to ensure only a subset of a cluster is rebooting at any given time.</li>
+<li><a href="https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/" target="_blank">Kubernetes</a> stores configuration data into etcd for service discovery and cluster management; etcd&apos;s consistency is crucial for correctly scheduling and operating services. The Kubernetes API server persists cluster state into etcd. It uses etcd&apos;s watch API to monitor the cluster and roll out critical configuration changes.</li>
+</ul>
+<h2 id="comparison-chart">Comparison chart</h2>
+<p>Perhaps etcd already seems like a good fit, but as with all technological decisions, proceed with caution. Please note this documentation is written by the etcd team. Although the ideal is a disinterested comparison of technology and features, the authors&#x2019; expertise and biases obviously favor etcd. Use only as directed.</p>
+<p>The table below is a handy quick reference for spotting the differences among etcd and its most popular alternatives at a glance. Further commentary and details for each column are in the sections following the table.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>etcd</th>
+<th>ZooKeeper</th>
+<th>Consul</th>
+<th>NewSQL (Cloud Spanner, CockroachDB, TiDB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Concurrency Primitives</td>
+<td><a href="https://godoc.org/github.com/etcd-io/etcd/server/etcdserver/api/v3lock/v3lockpb" target="_blank">Lock RPCs</a>, <a href="https://godoc.org/github.com/etcd-io/etcd/server/etcdserver/api/v3election/v3electionpb" target="_blank">Election RPCs</a>, <a href="https://github.com/etcd-io/etcd/blob/master/etcdctl/README.md#lock-options-lockname-command-arg1-arg2-" target="_blank">command line locks</a>, <a href="https://github.com/etcd-io/etcd/blob/master/etcdctl/README.md#elect-options-election-name-proposal" target="_blank">command line elections</a>, <a href="https://godoc.org/github.com/etcd-io/etcd/client/v3/experimental/recipes" target="_blank">recipes</a>  in go</td>
+<td>External <a href="http://curator.apache.org/" target="_blank">curator recipes</a> in Java</td>
+<td><a href="https://www.consul.io/commands/lock" target="_blank">Native lock API</a></td>
+<td><a href="http://dl.acm.org/citation.cfm?id=2960999" target="_blank">Rare</a>, if any</td>
+</tr>
+<tr>
+<td>Linearizable Reads</td>
+<td><a href="../api_guarantees#isolation-level-and-consistency-of-replicas">Yes</a></td>
+<td>No</td>
+<td><a href="https://www.consul.io/api-docs#consistency" target="_blank">Yes</a></td>
+<td>Sometimes</td>
+</tr>
+<tr>
+<td>Multi-version Concurrency Control</td>
+<td><a href="../data_model">Yes</a></td>
+<td>No</td>
+<td>No</td>
+<td>Sometimes</td>
+</tr>
+<tr>
+<td>Transactions</td>
+<td><a href="../api#transaction">Field compares, Read, Write</a></td>
+<td><a href="https://zookeeper.apache.org/doc/r3.4.3/api/org/apache/zookeeper/ZooKeeper.html#multi(java.lang.Iterable)" target="_blank">Version checks, Write</a></td>
+<td><a href="https://www.consul.io/api/kv#txn" target="_blank">Field compare, Lock, Read, Write</a></td>
+<td>SQL-style</td>
+</tr>
+<tr>
+<td>Change Notification</td>
+<td><a href="../api#watch-streams">Historical and current key intervals</a></td>
+<td><a href="https://zookeeper.apache.org/doc/current/zookeeperProgrammers.html#ch_zkWatches" target="_blank">Current keys and directories</a></td>
+<td><a href="https://www.consul.io/docs/dynamic-app-config/watches" target="_blank">Current keys and prefixes</a></td>
+<td>Triggers (sometimes)</td>
+</tr>
+<tr>
+<td>User permissions</td>
+<td><a href="../../op-guide/authentication/rbac">Role based</a></td>
+<td><a href="https://zookeeper.apache.org/doc/r3.1.2/zookeeperProgrammers.html#sc_ZooKeeperAccessControl" target="_blank">ACLs</a></td>
+<td><a href="https://www.consul.io/docs/security/acl" target="_blank">ACLs</a></td>
+<td>Varies (per-table <a href="https://www.cockroachlabs.com/docs/stable/grant.html" target="_blank">GRANT</a>, per-database <a href="https://cloud.google.com/spanner/docs/iam#roles" target="_blank">roles</a>)</td>
+</tr>
+<tr>
+<td>HTTP/JSON API</td>
+<td><a href="../../dev-guide/api_grpc_gateway">Yes</a></td>
+<td>No</td>
+<td><a href="https://www.consul.io/api-docs#formatted-json-output" target="_blank">Yes</a></td>
+<td>Rarely</td>
+</tr>
+<tr>
+<td>Membership Reconfiguration</td>
+<td><a href="../../op-guide/runtime-configuration">Yes</a></td>
+<td><a href="https://zookeeper.apache.org/doc/current/zookeeperReconfig.html" target="_blank">&gt;3.5.0</a></td>
+<td><a href="https://learn.hashicorp.com/tutorials/consul/add-remove-servers?in=consul/day-2-operations" target="_blank">Yes</a></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Maximum reliable database size</td>
+<td>Several gigabytes</td>
+<td>Hundreds of megabytes (sometimes several gigabytes)</td>
+<td>Hundreds of MBs</td>
+<td>Terabytes+</td>
+</tr>
+<tr>
+<td>Minimum read linearization latency</td>
+<td>Network RTT</td>
+<td>No read linearization</td>
+<td>RTT + fsync</td>
+<td>Clock barriers (atomic, NTP)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="zookeeper">ZooKeeper</h3>
+<p>ZooKeeper solves the same problem as etcd: distributed system coordination and metadata storage. However, etcd has the luxury of hindsight taken from engineering and operational experience with ZooKeeper&#x2019;s design and implementation. The lessons learned from Zookeeper certainly informed etcd&#x2019;s design, helping it support large scale systems like Kubernetes. The improvements etcd made over Zookeeper include:</p>
+<ul>
+<li>Dynamic cluster membership reconfiguration</li>
+<li>Stable read/write under high load</li>
+<li>A multi-version concurrency control data model</li>
+<li>Reliable key monitoring which never silently drop events</li>
+<li>Lease primitives decoupling connections from sessions</li>
+<li>APIs for safe distributed shared locks</li>
+</ul>
+<p>Furthermore, etcd supports a wide range of languages and frameworks out of the box. Whereas Zookeeper has its own custom Jute RPC protocol, which is totally unique to Zookeeper and limits its <a href="https://zookeeper.apache.org/doc/r3.1.2/zookeeperProgrammers.html#ch_bindings" target="_blank">supported language bindings</a>, etcd&#x2019;s client protocol is built from <a href="https://www.grpc.io" target="_blank">gRPC</a>, a popular RPC framework with language bindings for go, C++, Java, and more. Likewise, gRPC can be serialized into JSON over HTTP, so even general command line utilities like <code>curl</code> can talk to it. Since systems can select from a variety of choices, they are built on etcd with native tooling rather than around etcd with a single fixed set of technologies.</p>
+<p>When considering features, support, and stability, new applications planning to use Zookeeper for a consistent key value store would do well to choose etcd instead.</p>
+<h3 id="consul">Consul</h3>
+<p>Consul is an end-to-end service discovery framework. It provides built-in health checking, failure detection, and DNS services. In addition, Consul exposes a key value store with RESTful HTTP APIs. <a href="https://github.com/coreos/dbtester/tree/master/test-results/2018Q1-02-etcd-zookeeper-consul" target="_blank">As it stands in Consul 1.0</a>, the storage system does not scale as well as other systems like etcd or Zookeeper in key-value operations; systems requiring millions of keys will suffer from high latencies and memory pressure. The key value API is missing, most notably, multi-version keys, conditional transactions, and reliable streaming watches.</p>
+<p>etcd and Consul solve different problems. If looking for a distributed consistent key value store, etcd is a better choice over Consul. If looking for end-to-end cluster service discovery, etcd will not have enough features; choose Kubernetes, Consul, or SmartStack.</p>
+<h3 id="newsql-cloud-spanner-cockroachdb-tidb">NewSQL (Cloud Spanner, CockroachDB, TiDB)</h3>
+<p>Both etcd and NewSQL databases (e.g., <a href="https://github.com/cockroachdb/cockroach" target="_blank">Cockroach</a>, <a href="https://github.com/pingcap/tidb" target="_blank">TiDB</a>, <a href="https://cloud.google.com/spanner/" target="_blank">Google Spanner</a>) provide strong data consistency guarantees with high availability. However, the significantly different system design parameters lead to significantly different client APIs and performance characteristics.</p>
+<p>NewSQL databases are meant to horizontally scale across data centers. These systems typically partition data across multiple consistent replication groups (shards), potentially distant, storing data sets on the order of terabytes and above. This sort of scaling makes them poor candidates for distributed coordination as they have long latencies from waiting on clocks and expect updates with mostly localized dependency graphs. The data is organized into tables, including SQL-style query facilities with richer semantics than etcd, but at the cost of additional complexity for processing, planning, and optimizing queries.</p>
+<p>In short, choose etcd for storing metadata or coordinating distributed applications. If storing more than a few GB of data or if full SQL queries are needed, choose a NewSQL database.</p>
+<h2 id="using-etcd-for-metadata">Using etcd for metadata</h2>
+<p>etcd replicates all data within a single consistent replication group. For storing up to a few GB of data with consistent ordering, this is the most efficient approach. Each modification of cluster state, which may change multiple keys, is assigned a global unique ID, called a revision in etcd, from a monotonically increasing counter for reasoning over ordering. Since there&#x2019;s only a single replication group, the modification request only needs to go through the raft protocol to commit. By limiting consensus to one replication group, etcd gets distributed consistency with a simple protocol while achieving low latency and high throughput.</p>
+<p>The replication behind etcd cannot horizontally scale because it lacks data sharding. In contrast, NewSQL databases usually shard data across multiple consistent replication groups, storing data sets on the order of terabytes and above. However, to assign each modification a global unique and increasing ID, each request must go through an additional coordination protocol among replication groups. This extra coordination step may potentially conflict on the global ID, forcing ordered requests to retry. The result is a more complicated approach with typically worse performance than etcd for strict ordering.</p>
+<p>If an application reasons primarily about metadata or metadata ordering, such as to coordinate processes, choose etcd. If the application needs a large data store spanning multiple data centers and does not heavily depend on strong global ordering properties, choose a NewSQL database.</p>
+<h2 id="using-etcd-for-distributed-coordination">Using etcd for distributed coordination</h2>
+<p>etcd has distributed coordination primitives such as event watches, leases, elections, and distributed shared locks out of the box (Note that in the case of the distributed shared lock, users need to be aware about its non obvious properties. The details are described below). These primitives are both maintained and supported by the etcd developers; leaving these primitives to external libraries shirks the responsibility of developing foundational distributed software, essentially leaving the system incomplete. NewSQL databases usually expect these distributed coordination primitives to be authored by third parties. Likewise, ZooKeeper famously has a separate and independent <a href="http://curator.apache.org/" target="_blank">library</a> of coordination recipes. Consul, which provides a native locking API, goes so far as to apologize that it&#x2019;s &#x201C;<a href="https://www.consul.io/docs/dynamic-app-config/sessions" target="_blank">not a bulletproof method</a>&#x201D;.</p>
+<p>In theory, it&#x2019;s possible to build these primitives atop any storage systems providing strong consistency. However, the algorithms tend to be subtle; it is easy to develop a locking algorithm that appears to work, only to suddenly break due to  thundering herd and timing skew. Furthermore, other primitives supported by etcd, such as transactional memory depend on etcd&#x2019;s MVCC data model; simple strong consistency is not enough.</p>
+<p>For distributed coordination, choosing etcd can help prevent operational headaches and save engineering effort.</p>
+<h3 id="notes-on-the-usage-of-lock-and-lease">Notes on the usage of lock and lease</h3>
+<p>etcd provides <a href="https://godoc.org/github.com/etcd-io/etcd/server/etcdserver/api/v3lock/v3lockpb" target="_blank">lock APIs</a> which are based on <a href="https://web.stanford.edu/class/cs240/readings/89-leases.pdf" target="_blank">the lease mechanism</a> and <a href="https://godoc.org/github.com/etcd-io/etcd/client/v3/leasing" target="_blank">its implementation in etcd</a>. The basic idea of the lease mechanism is: a server grants a token, which is called a lease, to a requesting client. When the server grants a lease, it associates a TTL with the lease. When the server detects the passage of time longer than the TTL, it revokes the lease. While the client holds a non revoked lease it can claim that it owns access to a resource associated with the lease. In the case of etcd, the resource is a key in the etcd keyspace. etcd provides lock APIs with this scheme. However, the lock APIs cannot be used as mutual exclusion mechanism by themselves. The APIs are called lock because <a href="https://research.google/pubs/pub27897/" target="_blank">for historical reasons</a>. The lock APIs can, however, be used as an optimization mechanism of mutual exclusion as described below.</p>
+<p>The most important aspect of the lease mechanism is that TTL is defined as a physical time interval. Both of the server and client measures passing of time with their own clocks. It allows a situation that the server revokes the lease but the client still claims it owns the lease.</p>
+<p>Then how does the lease mechanism guarantees mutual exclusion of the locking mechanism? Actually, the lease mechanism itself doesn&apos;t guarantee mutual exclusion. Owning a lease cannot guarantee the owner holds a lock of the resource.</p>
+<p>In the case of controlling mutual accesses to keys of etcd itself with etcd lock, mutual exclusion is implemented based on the mechanism of version number validation (it is sometimes called compare and swap in other systems like Consul). In etcd&apos;s RPCs like <code>Put</code> or <code>Txn</code>, we can specify required conditions about revision number and lease ID for the operations. If the conditions are not satisfied, the operation can fail. With this mechanism, etcd provides distributed locking for clients. It means that a client knows that it is acquiring a lock of a key when its requests are completed by etcd cluster successfully.</p>
+<p>In distributed locking literature similar designs are described:</p>
+<ul>
+<li>In <a href="https://research.google/pubs/pub27897/" target="_blank">the paper of Chubby</a>, the concept of <em>sequencer</em> is introduced. We interpret that sequencer is an almost same to the combination of revision number and lease ID of etcd.</li>
+<li>In <a href="https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html" target="_blank">How to do distributed locking</a>, Martin Kleppmann introduced the idea of <em>fencing token</em>. The authors interpret that fencing token is revision number in the case of etcd. In <a href="https://fpj.me/2016/02/10/note-on-fencing-and-distributed-locks/" target="_blank">Note on fencing and distributed locks</a> Flavio Junqueira discussed how the idea of fencing token should be implemented in the case of zookeeper.</li>
+<li>In <a href="https://web.archive.org/web/20190725151657/http://www.dainf.cefetpr.br/~tacla/SDII/PracticalUseOfClocks.pdf" target="_blank">Practical Uses of Synchronized Clocks in Distributed Systems</a>, we can find a description that Thor implements a distributed locking mechanism based on version number validation and lease.</li>
+</ul>
+<p>Why do etcd and other systems provide lease if they provide mutual exclusion based on version number validation? Well, leases provide an optimization mechanism for reducing a number of aborted requests.</p>
+<p>Note that in the case of etcd keys, it can be locked efficiently because of the mechanisms of lease and version number validation. If users need to protect resources which aren&apos;t related to etcd, the resources must provide the version number validation mechanism and consistency of replicas like keys of etcd. The lock feature of etcd itself cannot be used for protecting external resources.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="glossary.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Glossary">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Etcd Versus Other Key Value Stores","weight":2875,"description":"History and use of etcd & comparison with other tools","level":"1.4.9","depth":2,"next":{"title":"Op Guide","level":"1.5","depth":1,"ref":"","articles":[{"title":"Authentication","level":"1.5.1","depth":2,"ref":"","articles":[{"title":"Authentication Guides","level":"1.5.1.1","depth":3,"path":"op-guide/authentication/_index.md","ref":"op-guide/authentication/_index.md","articles":[]},{"title":"Authentication","level":"1.5.1.2","depth":3,"path":"op-guide/authentication/authentication.md","ref":"op-guide/authentication/authentication.md","articles":[]},{"title":"Role Based Access Control","level":"1.5.1.3","depth":3,"path":"op-guide/authentication/rbac.md","ref":"op-guide/authentication/rbac.md","articles":[]}]},{"title":"Operations Guide","level":"1.5.2","depth":2,"path":"op-guide/_index.md","ref":"op-guide/_index.md","articles":[]},{"title":"Clustering Guide","level":"1.5.3","depth":2,"path":"op-guide/clustering.md","ref":"op-guide/clustering.md","articles":[]},{"title":"Configuration Flags","level":"1.5.4","depth":2,"path":"op-guide/configuration.md","ref":"op-guide/configuration.md","articles":[]},{"title":"Run Etcd Clusters Inside Containers","level":"1.5.5","depth":2,"path":"op-guide/container.md","ref":"op-guide/container.md","articles":[]},{"title":"Data Corruption","level":"1.5.6","depth":2,"path":"op-guide/data_corruption.md","ref":"op-guide/data_corruption.md","articles":[]},{"title":"Failure Modes","level":"1.5.7","depth":2,"path":"op-guide/failures.md","ref":"op-guide/failures.md","articles":[]},{"title":"Etcd Gateway","level":"1.5.8","depth":2,"path":"op-guide/gateway.md","ref":"op-guide/gateway.md","articles":[]},{"title":"G RPC Proxy","level":"1.5.9","depth":2,"path":"op-guide/grpc_proxy.md","ref":"op-guide/grpc_proxy.md","articles":[]},{"title":"Hardware Recommendations","level":"1.5.10","depth":2,"path":"op-guide/hardware.md","ref":"op-guide/hardware.md","articles":[]},{"title":"Maintenance","level":"1.5.11","depth":2,"path":"op-guide/maintenance.md","ref":"op-guide/maintenance.md","articles":[]},{"title":"Monitoring Etcd","level":"1.5.12","depth":2,"path":"op-guide/monitoring.md","ref":"op-guide/monitoring.md","articles":[]},{"title":"Performance","level":"1.5.13","depth":2,"path":"op-guide/performance.md","ref":"op-guide/performance.md","articles":[]},{"title":"Disaster Recovery","level":"1.5.14","depth":2,"path":"op-guide/recovery.md","ref":"op-guide/recovery.md","articles":[]},{"title":"Runtime Reconfiguration","level":"1.5.15","depth":2,"path":"op-guide/runtime-configuration.md","ref":"op-guide/runtime-configuration.md","articles":[]},{"title":"Design Of Runtime Reconfiguration","level":"1.5.16","depth":2,"path":"op-guide/runtime-reconf-design.md","ref":"op-guide/runtime-reconf-design.md","articles":[]},{"title":"Transport Security Model","level":"1.5.17","depth":2,"path":"op-guide/security.md","ref":"op-guide/security.md","articles":[]},{"title":"Supported Platforms","level":"1.5.18","depth":2,"path":"op-guide/supported-platform.md","ref":"op-guide/supported-platform.md","articles":[]},{"title":"Migrate Applications From Using API V 2 To API V 3","level":"1.5.19","depth":2,"path":"op-guide/v2-migration.md","ref":"op-guide/v2-migration.md","articles":[]},{"title":"Versioning","level":"1.5.20","depth":2,"path":"op-guide/versioning.md","ref":"op-guide/versioning.md","articles":[]}]},"previous":{"title":"Glossary","level":"1.4.8","depth":2,"path":"learning/glossary.md","ref":"learning/glossary.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-highlight","-livereload","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"etcd 英文文档","language":"us-en","links":{"sidebar":{"Home":"https://docs.khs1994.com"}},"gitbook":"*"},"file":{"path":"learning/why.md","mtime":"2022-06-30T01:05:10.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-30T01:05:58.404Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
