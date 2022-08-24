@@ -24,7 +24,6 @@
   * [Discovery Service Protocol](dev-internal/discovery_protocol.md)
   * [Logging Conventions](dev-internal/logging.md)
   * [Golang Modules](dev-internal/modules.md)
-  * [Etcd Release Guide](dev-internal/release.md)
 - Learning
   * [Learning](learning/_index.md)
   * [KV API Guarantees](learning/api_guarantees.md)
@@ -87,7 +86,6 @@
   * [Upgrade etcd from 3.3 to 3.4](upgrades/upgrade_3_4.md)
   * [Upgrade etcd from 3.4 to 3.5](upgrades/upgrade_3_5.md)
   * [Upgrading Etcd Clusters And Applications](upgrades/upgrading-etcd.md)
-* [Branch Management](branch_management.md)
 * [Demo](demo.md)
 * [FAQ](faq.md)
 * [Install](install.md)
