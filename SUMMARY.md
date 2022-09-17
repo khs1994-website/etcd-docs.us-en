@@ -56,7 +56,6 @@
   * [Design Of Runtime Reconfiguration](op-guide/runtime-reconf-design.md)
   * [Transport Security Model](op-guide/security.md)
   * [Supported Platforms](op-guide/supported-platform.md)
-  * [Migrate Applications From Using API V 2 To API V 3](op-guide/v2-migration.md)
   * [Versioning](op-guide/versioning.md)
 - Triage
   * [Triage](triage/_index.md)
