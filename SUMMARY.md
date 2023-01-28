@@ -41,7 +41,7 @@
     * [Role Based Access Control](op-guide/authentication/rbac.md)
   * [Operations Guide](op-guide/_index.md)
   * [Clustering Guide](op-guide/clustering.md)
-  * [Configuration Flags](op-guide/configuration.md)
+  * [Configuration Options](op-guide/configuration.md)
   * [Run Etcd Clusters Inside Containers](op-guide/container.md)
   * [Data Corruption](op-guide/data_corruption.md)
   * [Failure Modes](op-guide/failures.md)
