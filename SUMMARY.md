@@ -33,6 +33,7 @@
   * [Etcd Client Design](learning/design-client.md)
   * [Etcd Learner Design](learning/design-learner.md)
   * [Glossary](learning/glossary.md)
+  * [Etcd Persistent Storage Files](learning/persistent-storage-files.md)
   * [Etcd Versus Other Key Value Stores](learning/why.md)
 - Op Guide
   - Authentication
