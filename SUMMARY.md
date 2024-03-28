@@ -26,7 +26,7 @@
   * [Golang Modules](dev-internal/modules.md)
 - Learning
   * [Learning](learning/_index.md)
-  * [KV API Guarantees](learning/api_guarantees.md)
+  * [Etcd API Guarantees](learning/api_guarantees.md)
   * [Etcd API](learning/api.md)
   * [Data Model](learning/data_model.md)
   * [Etcd V 3 Authentication Design](learning/design-auth-v3.md)
