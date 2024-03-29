@@ -64,7 +64,6 @@
   * [PR Management](triage/PRs.md)
 - Tutorials
   * [Tutorials](tutorials/_index.md)
-  * [How To Access Etcd](tutorials/how-to-access-etcd.md)
   * [How To Check Cluster Status](tutorials/how-to-check-cluster-status.md)
   * [How To Conduct Leader Election In Etcd Cluster](tutorials/how-to-conduct-elections.md)
   * [How To Create Lease](tutorials/how-to-create-lease.md)
@@ -77,6 +76,8 @@
   * [How To Set Up A Demo Etcd Cluster](tutorials/how-to-setup-cluster.md)
   * [How To Make Multiple Writes In A Transaction](tutorials/how-to-transactional-write.md)
   * [How To Watch Keys](tutorials/how-to-watch-keys.md)
+  * [Reading From Etcd](tutorials/reading-from-etcd.md)
+  * [Writing To Etcd](tutorials/writing-to-etcd.md)
 - Upgrades
   * [Upgrading](upgrades/_index.md)
   * [Upgrade etcd from 2.3 to 3.0](upgrades/upgrade_3_0.md)
