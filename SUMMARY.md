@@ -24,6 +24,10 @@
   * [Discovery Service Protocol](dev-internal/discovery_protocol.md)
   * [Logging Conventions](dev-internal/logging.md)
   * [Golang Modules](dev-internal/modules.md)
+- Downgrades
+  * [Downgrading](downgrades/_index.md)
+  * [Downgrade etcd from 3.5 to 3.4](downgrades/downgrade_3_5.md)
+  * [Downgrading Etcd Clusters And Applications](downgrades/downgrading-etcd.md)
 - Learning
   * [Learning](learning/_index.md)
   * [Etcd API Guarantees](learning/api_guarantees.md)
