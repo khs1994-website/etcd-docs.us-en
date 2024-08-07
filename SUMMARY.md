@@ -53,6 +53,7 @@
   * [Etcd Gateway](op-guide/gateway.md)
   * [G RPC Proxy](op-guide/grpc_proxy.md)
   * [Hardware Recommendations](op-guide/hardware.md)
+  * [Run Etcd Clusters As A Kubernetes Stateful Set](op-guide/kubernetes.md)
   * [Maintenance](op-guide/maintenance.md)
   * [Monitoring Etcd](op-guide/monitoring.md)
   * [Performance](op-guide/performance.md)
