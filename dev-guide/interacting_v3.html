@@ -1,0 +1,1933 @@
+
+<!DOCTYPE HTML>
+<html lang="us-en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Interacting With Etcd · etcd 英文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="etcdctl: a command line tool for interacting with the etcd server">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="limit.html" />
+    
+    
+    <link rel="prev" href="grpc_naming.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://docs.khs1994.com" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" >
+            
+                <span>
+            
+                    
+                    Benchmarks
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../benchmarks/_index.html">
+            
+                <a href="../benchmarks/_index.html">
+            
+                    
+                    Benchmarks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../benchmarks/etcd-2-1-0-alpha-benchmarks.html">
+            
+                <a href="../benchmarks/etcd-2-1-0-alpha-benchmarks.html">
+            
+                    
+                    Benchmarking etcd v2.1.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../benchmarks/etcd-2-2-0-benchmarks.html">
+            
+                <a href="../benchmarks/etcd-2-2-0-benchmarks.html">
+            
+                    
+                    Benchmarking etcd v2.2.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../benchmarks/etcd-2-2-0-rc-benchmarks.html">
+            
+                <a href="../benchmarks/etcd-2-2-0-rc-benchmarks.html">
+            
+                    
+                    Benchmarking etcd v2.2.0-rc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../benchmarks/etcd-2-2-0-rc-memory-benchmarks.html">
+            
+                <a href="../benchmarks/etcd-2-2-0-rc-memory-benchmarks.html">
+            
+                    
+                    Benchmarking etcd v2.2.0-rc-memory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="../benchmarks/etcd-3-demo-benchmarks.html">
+            
+                <a href="../benchmarks/etcd-3-demo-benchmarks.html">
+            
+                    
+                    Benchmarking Etcd V 3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="../benchmarks/etcd-3-watch-memory-benchmark.html">
+            
+                <a href="../benchmarks/etcd-3-watch-memory-benchmark.html">
+            
+                    
+                    Watch Memory Usage Benchmark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.8" data-path="../benchmarks/etcd-storage-memory-benchmark.html">
+            
+                <a href="../benchmarks/etcd-storage-memory-benchmark.html">
+            
+                    
+                    Storage Memory Usage Benchmark
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Dev Guide
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="_index.html">
+            
+                <a href="_index.html">
+            
+                    
+                    Developer Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="api_concurrency_reference_v3.html">
+            
+                <a href="api_concurrency_reference_v3.html">
+            
+                    
+                    API Reference Concurrency
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="api_grpc_gateway.html">
+            
+                <a href="api_grpc_gateway.html">
+            
+                    
+                    Why G RPC Gateway
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="api_reference_v3.html">
+            
+                <a href="api_reference_v3.html">
+            
+                    
+                    API Reference
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="discovery_protocol.html">
+            
+                <a href="discovery_protocol.html">
+            
+                    
+                    Discovery Service Protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="features.html">
+            
+                <a href="features.html">
+            
+                    
+                    Etcd Features
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="grpc_naming.html">
+            
+                <a href="grpc_naming.html">
+            
+                    
+                    G RPC Naming And Discovery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.8" data-path="interacting_v3.html">
+            
+                <a href="interacting_v3.html">
+            
+                    
+                    Interacting With Etcd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="limit.html">
+            
+                <a href="limit.html">
+            
+                    
+                    System Limits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="local_cluster.html">
+            
+                <a href="local_cluster.html">
+            
+                    
+                    Set Up A Local Cluster
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Dev Internal
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../dev-internal/discovery_protocol.html">
+            
+                <a href="../dev-internal/discovery_protocol.html">
+            
+                    
+                    Discovery Service Protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../dev-internal/logging.html">
+            
+                <a href="../dev-internal/logging.html">
+            
+                    
+                    Logging Conventions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../dev-internal/modules.html">
+            
+                <a href="../dev-internal/modules.html">
+            
+                    
+                    Golang Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Downgrades
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../downgrades/_index.html">
+            
+                <a href="../downgrades/_index.html">
+            
+                    
+                    Downgrading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../downgrades/downgrade_3_5.html">
+            
+                <a href="../downgrades/downgrade_3_5.html">
+            
+                    
+                    Downgrade etcd from 3.5 to 3.4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../downgrades/downgrading-etcd.html">
+            
+                <a href="../downgrades/downgrading-etcd.html">
+            
+                    
+                    Downgrading Etcd Clusters And Applications
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Learning
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../learning/_index.html">
+            
+                <a href="../learning/_index.html">
+            
+                    
+                    Learning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../learning/api_guarantees.html">
+            
+                <a href="../learning/api_guarantees.html">
+            
+                    
+                    Etcd API Guarantees
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../learning/api.html">
+            
+                <a href="../learning/api.html">
+            
+                    
+                    Etcd API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../learning/data_model.html">
+            
+                <a href="../learning/data_model.html">
+            
+                    
+                    Data Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../learning/design-auth-v3.html">
+            
+                <a href="../learning/design-auth-v3.html">
+            
+                    
+                    Etcd V 3 Authentication Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../learning/design-client.html">
+            
+                <a href="../learning/design-client.html">
+            
+                    
+                    Etcd Client Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../learning/design-learner.html">
+            
+                <a href="../learning/design-learner.html">
+            
+                    
+                    Etcd Learner Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../learning/glossary.html">
+            
+                <a href="../learning/glossary.html">
+            
+                    
+                    Glossary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../learning/persistent-storage-files.html">
+            
+                <a href="../learning/persistent-storage-files.html">
+            
+                    
+                    Etcd Persistent Storage Files
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../learning/why.html">
+            
+                <a href="../learning/why.html">
+            
+                    
+                    Etcd Versus Other Key Value Stores
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Op Guide
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" >
+            
+                <span>
+            
+                    
+                    Authentication
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../op-guide/authentication/_index.html">
+            
+                <a href="../op-guide/authentication/_index.html">
+            
+                    
+                    Authentication Guides
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../op-guide/authentication/authentication.html">
+            
+                <a href="../op-guide/authentication/authentication.html">
+            
+                    
+                    Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="../op-guide/authentication/rbac.html">
+            
+                <a href="../op-guide/authentication/rbac.html">
+            
+                    
+                    Role Based Access Control
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../op-guide/_index.html">
+            
+                <a href="../op-guide/_index.html">
+            
+                    
+                    Operations Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../op-guide/clustering.html">
+            
+                <a href="../op-guide/clustering.html">
+            
+                    
+                    Clustering Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../op-guide/configuration.html">
+            
+                <a href="../op-guide/configuration.html">
+            
+                    
+                    Configuration Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../op-guide/container.html">
+            
+                <a href="../op-guide/container.html">
+            
+                    
+                    Run Etcd Clusters Inside Containers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../op-guide/data_corruption.html">
+            
+                <a href="../op-guide/data_corruption.html">
+            
+                    
+                    Data Corruption
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../op-guide/failures.html">
+            
+                <a href="../op-guide/failures.html">
+            
+                    
+                    Failure Modes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../op-guide/gateway.html">
+            
+                <a href="../op-guide/gateway.html">
+            
+                    
+                    Etcd Gateway
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../op-guide/grpc_proxy.html">
+            
+                <a href="../op-guide/grpc_proxy.html">
+            
+                    
+                    G RPC Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../op-guide/hardware.html">
+            
+                <a href="../op-guide/hardware.html">
+            
+                    
+                    Hardware Recommendations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../op-guide/kubernetes.html">
+            
+                <a href="../op-guide/kubernetes.html">
+            
+                    
+                    Run Etcd Clusters As A Kubernetes Stateful Set
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="../op-guide/maintenance.html">
+            
+                <a href="../op-guide/maintenance.html">
+            
+                    
+                    Maintenance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="../op-guide/monitoring.html">
+            
+                <a href="../op-guide/monitoring.html">
+            
+                    
+                    Monitoring Etcd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="../op-guide/performance.html">
+            
+                <a href="../op-guide/performance.html">
+            
+                    
+                    Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.15" data-path="../op-guide/recovery.html">
+            
+                <a href="../op-guide/recovery.html">
+            
+                    
+                    Disaster Recovery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.16" data-path="../op-guide/runtime-configuration.html">
+            
+                <a href="../op-guide/runtime-configuration.html">
+            
+                    
+                    Runtime Reconfiguration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.17" data-path="../op-guide/runtime-reconf-design.html">
+            
+                <a href="../op-guide/runtime-reconf-design.html">
+            
+                    
+                    Design Of Runtime Reconfiguration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.18" data-path="../op-guide/security.html">
+            
+                <a href="../op-guide/security.html">
+            
+                    
+                    Transport Security Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.19" data-path="../op-guide/supported-platform.html">
+            
+                <a href="../op-guide/supported-platform.html">
+            
+                    
+                    Supported Platforms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.20" data-path="../op-guide/versioning.html">
+            
+                <a href="../op-guide/versioning.html">
+            
+                    
+                    Versioning
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Triage
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../triage/_index.html">
+            
+                <a href="../triage/_index.html">
+            
+                    
+                    Triage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../triage/issues.html">
+            
+                <a href="../triage/issues.html">
+            
+                    
+                    Issue Triage Guidelines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../triage/PRs.html">
+            
+                <a href="../triage/PRs.html">
+            
+                    
+                    PR Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../tutorials/_index.html">
+            
+                <a href="../tutorials/_index.html">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../tutorials/how-to-check-cluster-status.html">
+            
+                <a href="../tutorials/how-to-check-cluster-status.html">
+            
+                    
+                    How To Check Cluster Status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../tutorials/how-to-conduct-elections.html">
+            
+                <a href="../tutorials/how-to-conduct-elections.html">
+            
+                    
+                    How To Conduct Leader Election In Etcd Cluster
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../tutorials/how-to-create-lease.html">
+            
+                <a href="../tutorials/how-to-create-lease.html">
+            
+                    
+                    How To Create Lease
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../tutorials/how-to-create-locks.html">
+            
+                <a href="../tutorials/how-to-create-locks.html">
+            
+                    
+                    How To Create Locks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../tutorials/how-to-deal-with-membership.html">
+            
+                <a href="../tutorials/how-to-deal-with-membership.html">
+            
+                    
+                    How To Add And Remove Members
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../tutorials/how-to-delete-keys.html">
+            
+                <a href="../tutorials/how-to-delete-keys.html">
+            
+                    
+                    How To Delete Keys
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../tutorials/how-to-get-key-by-prefix.html">
+            
+                <a href="../tutorials/how-to-get-key-by-prefix.html">
+            
+                    
+                    How To Get Keys By Prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../tutorials/how-to-migrate.html">
+            
+                <a href="../tutorials/how-to-migrate.html">
+            
+                    
+                    How To Migrate Etcd From V 2 To V 3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="../tutorials/how-to-save-database.html">
+            
+                <a href="../tutorials/how-to-save-database.html">
+            
+                    
+                    How To Save The Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="../tutorials/how-to-setup-cluster.html">
+            
+                <a href="../tutorials/how-to-setup-cluster.html">
+            
+                    
+                    How To Set Up A Demo Etcd Cluster
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.12" data-path="../tutorials/how-to-transactional-write.html">
+            
+                <a href="../tutorials/how-to-transactional-write.html">
+            
+                    
+                    How To Make Multiple Writes In A Transaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.13" data-path="../tutorials/how-to-watch-keys.html">
+            
+                <a href="../tutorials/how-to-watch-keys.html">
+            
+                    
+                    How To Watch Keys
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.14" data-path="../tutorials/reading-from-etcd.html">
+            
+                <a href="../tutorials/reading-from-etcd.html">
+            
+                    
+                    Reading From Etcd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.15" data-path="../tutorials/writing-to-etcd.html">
+            
+                <a href="../tutorials/writing-to-etcd.html">
+            
+                    
+                    Writing To Etcd
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    Upgrades
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../upgrades/_index.html">
+            
+                <a href="../upgrades/_index.html">
+            
+                    
+                    Upgrading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../upgrades/upgrade_3_0.html">
+            
+                <a href="../upgrades/upgrade_3_0.html">
+            
+                    
+                    Upgrade etcd from 2.3 to 3.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../upgrades/upgrade_3_1.html">
+            
+                <a href="../upgrades/upgrade_3_1.html">
+            
+                    
+                    Upgrade etcd from 3.0 to 3.1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../upgrades/upgrade_3_2.html">
+            
+                <a href="../upgrades/upgrade_3_2.html">
+            
+                    
+                    Upgrade etcd from 3.1 to 3.2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../upgrades/upgrade_3_3.html">
+            
+                <a href="../upgrades/upgrade_3_3.html">
+            
+                    
+                    Upgrade etcd from 3.2 to 3.3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../upgrades/upgrade_3_4.html">
+            
+                <a href="../upgrades/upgrade_3_4.html">
+            
+                    
+                    Upgrade etcd from 3.3 to 3.4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../upgrades/upgrade_3_5.html">
+            
+                <a href="../upgrades/upgrade_3_5.html">
+            
+                    
+                    Upgrade etcd from 3.4 to 3.5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../upgrades/upgrading-etcd.html">
+            
+                <a href="../upgrades/upgrading-etcd.html">
+            
+                    
+                    Upgrading Etcd Clusters And Applications
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../demo.html">
+            
+                <a href="../demo.html">
+            
+                    
+                    Demo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../faq.html">
+            
+                <a href="../faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../install.html">
+            
+                <a href="../install.html">
+            
+                    
+                    Install
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../integrations.html">
+            
+                <a href="../integrations.html">
+            
+                    
+                    Libraries And Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../metrics.html">
+            
+                <a href="../metrics.html">
+            
+                    
+                    Metrics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../quickstart.html">
+            
+                <a href="../quickstart.html">
+            
+                    
+                    Quickstart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    v3.5 docs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../reporting_bugs.html">
+            
+                <a href="../reporting_bugs.html">
+            
+                    
+                    Reporting Bugs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../tuning.html">
+            
+                <a href="../tuning.html">
+            
+                    
+                    Tuning
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Interacting With Etcd</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>Users mostly interact with etcd by putting or getting the value of a key. This section describes how to do that by using etcdctl, a command line tool for interacting with etcd server. The concepts described here should apply to the gRPC APIs or client library APIs.</p>
+<p>The API version used by etcdctl to speak to etcd may be set to version <code>2</code> or <code>3</code> via the <code>ETCDCTL_API</code> environment variable. By default, etcdctl on master (3.4) uses the v3 API and earlier versions (3.3 and earlier) default to the v2 API.</p>
+<p>Note that any key that was created using the v2 API will not be able to be queried via the v3 API.  A v3 API <code>etcdctl get</code> of a v2 key will exit with 0 and no key data, this is the expected behaviour.</p>
+<pre class="language-"><code class="lang-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">ETCDCTL_API</span><span class="token operator">=</span><span class="token number">3</span>
+</code></pre>
+<h2 id="find-versions">Find versions</h2>
+<p>etcdctl version and Server API version can be useful in finding the appropriate commands to be used for performing various operations on etcd.</p>
+<p>Here is the command to find the versions:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl version
+etcdctl version: <span class="token number">3.1</span>.0-alpha.0+git
+API version: <span class="token number">3.1</span>
+</code></pre>
+<h2 id="write-a-key">Write a key</h2>
+<p>Applications store keys into the etcd cluster by writing to keys. Every stored key is replicated to all etcd cluster members through the Raft protocol to achieve consistency and reliability.</p>
+<p>Here is the command to set the value of key <code>foo</code> to <code>bar</code>:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl put foo bar
+OK
+</code></pre>
+<p>Also a key can be set for a specified interval of time by attaching lease to it.</p>
+<p>Here is the command to set the value of key <code>foo1</code> to <code>bar1</code> for 10s.</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl put foo1 bar1 --lease<span class="token operator">=</span>1234abcd
+OK
+</code></pre>
+<p>Note: The lease id <code>1234abcd</code> in the above command refers to id returned on creating the lease of 10s. This id can then be attached to the key.</p>
+<h2 id="read-keys">Read keys</h2>
+<p>Applications can read values of keys from an etcd cluster. Queries may read a single key, or a range of keys.</p>
+<p>Suppose the etcd cluster has stored the following keys:</p>
+<pre class="language-"><code class="lang-bash">foo <span class="token operator">=</span> bar
+foo1 <span class="token operator">=</span> bar1
+foo2 <span class="token operator">=</span> bar2
+foo3 <span class="token operator">=</span> bar3
+</code></pre>
+<p>Here is the command to read the value of key <code>foo</code>:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl get foo
+foo
+bar
+</code></pre>
+<p>Here is the command to read the value of key <code>foo</code> in hex format:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl get foo --hex
+<span class="token punctuation">\</span>x66<span class="token punctuation">\</span>x6f<span class="token punctuation">\</span>x6f          <span class="token comment"># Key</span>
+<span class="token punctuation">\</span>x62<span class="token punctuation">\</span>x61<span class="token punctuation">\</span>x72          <span class="token comment"># Value</span>
+</code></pre>
+<p>Here is the command to read only the value of key <code>foo</code>:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl get foo --print-value-only
+bar
+</code></pre>
+<p>Here is the command to range over the keys from <code>foo</code> to <code>foo3</code>:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl get foo foo3
+foo
+bar
+foo1
+bar1
+foo2
+bar2
+</code></pre>
+<p>Note that <code>foo3</code> is excluded since the range is over the half-open interval <code>[foo, foo3)</code>, excluding <code>foo3</code>.</p>
+<p>Here is the command to range over all keys prefixed with <code>foo</code>:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl get --prefix foo
+foo
+bar
+foo1
+bar1
+foo2
+bar2
+foo3
+bar3
+</code></pre>
+<p>Here is the command to range over all keys prefixed with <code>foo</code>, limiting the number of results to 2:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl get --prefix --limit<span class="token operator">=</span><span class="token number">2</span> foo
+foo
+bar
+foo1
+bar1
+</code></pre>
+<h2 id="read-past-version-of-keys">Read past version of keys</h2>
+<p>Applications may want to read superseded versions of a key. For example, an application may wish to roll back to an old configuration by accessing an earlier version of a key. Alternatively, an application may want a consistent view over multiple keys through multiple requests by accessing key history.
+Since every modification to the etcd cluster key-value store increments the global revision of an etcd cluster, an application can read superseded keys by providing an older etcd revision.</p>
+<p>Suppose an etcd cluster already has the following keys:</p>
+<pre class="language-"><code class="lang-bash">foo <span class="token operator">=</span> bar         <span class="token comment"># revision = 2</span>
+foo1 <span class="token operator">=</span> bar1       <span class="token comment"># revision = 3</span>
+foo <span class="token operator">=</span> bar_new     <span class="token comment"># revision = 4</span>
+foo1 <span class="token operator">=</span> bar1_new   <span class="token comment"># revision = 5</span>
+</code></pre>
+<p>Here are an example to access the past versions of keys:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl get --prefix foo <span class="token comment"># access the most recent versions of keys</span>
+foo
+bar_new
+foo1
+bar1_new
+
+$ etcdctl get --prefix --rev<span class="token operator">=</span><span class="token number">4</span> foo <span class="token comment"># access the versions of keys at revision 4</span>
+foo
+bar_new
+foo1
+bar1
+
+$ etcdctl get --prefix --rev<span class="token operator">=</span><span class="token number">3</span> foo <span class="token comment"># access the versions of keys at revision 3</span>
+foo
+bar
+foo1
+bar1
+
+$ etcdctl get --prefix --rev<span class="token operator">=</span><span class="token number">2</span> foo <span class="token comment"># access the versions of keys at revision 2</span>
+foo
+bar
+
+$ etcdctl get --prefix --rev<span class="token operator">=</span><span class="token number">1</span> foo <span class="token comment"># access the versions of keys at revision 1</span>
+</code></pre>
+<h2 id="read-keys-which-are-greater-than-or-equal-to-the-byte-value-of-the-specified-key">Read keys which are greater than or equal to the byte value of the specified key</h2>
+<p>Applications may want to read keys which are greater than or equal to the byte value of the specified key.</p>
+<p>Suppose an etcd cluster already has the following keys:</p>
+<pre class="language-"><code class="lang-bash">a <span class="token operator">=</span> <span class="token number">123</span>
+b <span class="token operator">=</span> <span class="token number">456</span>
+z <span class="token operator">=</span> <span class="token number">789</span>
+</code></pre>
+<p>Here is the command to read keys which are greater than or equal to the byte value of key <code>b</code> :</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl get --from-key b
+b
+<span class="token number">456</span>
+z
+<span class="token number">789</span>
+</code></pre>
+<h2 id="delete-keys">Delete keys</h2>
+<p>Applications can delete a key or a range of keys from an etcd cluster.</p>
+<p>Suppose an etcd cluster already has the following keys:</p>
+<pre class="language-"><code class="lang-bash">foo <span class="token operator">=</span> bar
+foo1 <span class="token operator">=</span> bar1
+foo3 <span class="token operator">=</span> bar3
+zoo <span class="token operator">=</span> val
+zoo1 <span class="token operator">=</span> val1
+zoo2 <span class="token operator">=</span> val2
+a <span class="token operator">=</span> <span class="token number">123</span>
+b <span class="token operator">=</span> <span class="token number">456</span>
+z <span class="token operator">=</span> <span class="token number">789</span>
+</code></pre>
+<p>Here is the command to delete key <code>foo</code>:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl del foo
+<span class="token number">1</span> <span class="token comment"># one key is deleted</span>
+</code></pre>
+<p>Here is the command to delete keys ranging from <code>foo</code> to <code>foo9</code>:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl del foo foo9
+<span class="token number">2</span> <span class="token comment"># two keys are deleted</span>
+</code></pre>
+<p>Here is the command to delete key <code>zoo</code> with the deleted key value pair returned:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl del --prev-kv zoo
+<span class="token number">1</span>   <span class="token comment"># one key is deleted</span>
+zoo <span class="token comment"># deleted key</span>
+val <span class="token comment"># the value of the deleted key</span>
+</code></pre>
+<p>Here is the command to delete keys having prefix as <code>zoo</code>:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl del --prefix zoo
+<span class="token number">2</span> <span class="token comment"># two keys are deleted</span>
+</code></pre>
+<p>Here is the command to delete keys which are greater than or equal to the byte value of key <code>b</code> :</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl del --from-key b
+<span class="token number">2</span> <span class="token comment"># two keys are deleted</span>
+</code></pre>
+<h2 id="watch-key-changes">Watch key changes</h2>
+<p>Applications can watch on a key or a range of keys to monitor for any updates.</p>
+<p>Here is the command to watch on key <code>foo</code>:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl <span class="token function">watch</span> foo
+<span class="token comment"># in another terminal: etcdctl put foo bar</span>
+PUT
+foo
+bar
+</code></pre>
+<p>Here is the command to watch on key <code>foo</code> in hex format:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl <span class="token function">watch</span> foo --hex
+<span class="token comment"># in another terminal: etcdctl put foo bar</span>
+PUT
+<span class="token punctuation">\</span>x66<span class="token punctuation">\</span>x6f<span class="token punctuation">\</span>x6f          <span class="token comment"># Key</span>
+<span class="token punctuation">\</span>x62<span class="token punctuation">\</span>x61<span class="token punctuation">\</span>x72          <span class="token comment"># Value</span>
+</code></pre>
+<p>Here is the command to watch on a range key from <code>foo</code> to <code>foo9</code>:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl <span class="token function">watch</span> foo foo9
+<span class="token comment"># in another terminal: etcdctl put foo bar</span>
+PUT
+foo
+bar
+<span class="token comment"># in another terminal: etcdctl put foo1 bar1</span>
+PUT
+foo1
+bar1
+</code></pre>
+<p>Here is the command to watch on keys having prefix <code>foo</code>:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl <span class="token function">watch</span> --prefix foo
+<span class="token comment"># in another terminal: etcdctl put foo bar</span>
+PUT
+foo
+bar
+<span class="token comment"># in another terminal: etcdctl put fooz1 barz1</span>
+PUT
+fooz1
+barz1
+</code></pre>
+<p>Here is the command to watch on multiple keys <code>foo</code> and <code>zoo</code>:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl <span class="token function">watch</span> -i
+$ <span class="token function">watch</span> foo
+$ <span class="token function">watch</span> zoo
+<span class="token comment"># in another terminal: etcdctl put foo bar</span>
+PUT
+foo
+bar
+<span class="token comment"># in another terminal: etcdctl put zoo val</span>
+PUT
+zoo
+val
+</code></pre>
+<h2 id="watch-historical-changes-of-keys">Watch historical changes of keys</h2>
+<p>Applications may want to watch for historical changes of keys in etcd. For example, an application may wish to receive all the modifications of a key; if the application stays connected to etcd, then <code>watch</code> is good enough. However, if the application or etcd fails, a change may happen during the failure, and the application will not receive the update in real time. To guarantee the update is delivered, the application must be able to watch for historical changes to keys. To do this, an application can specify a historical revision on a watch, just like reading past version of keys.</p>
+<p>Suppose we finished the following sequence of operations:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl put foo bar         <span class="token comment"># revision = 2</span>
+OK
+$ etcdctl put foo1 bar1       <span class="token comment"># revision = 3</span>
+OK
+$ etcdctl put foo bar_new     <span class="token comment"># revision = 4</span>
+OK
+$ etcdctl put foo1 bar1_new   <span class="token comment"># revision = 5</span>
+OK
+</code></pre>
+<p>Here is an example to watch the historical changes:</p>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># watch for changes on key `foo` since revision 2</span>
+$ etcdctl <span class="token function">watch</span> --rev<span class="token operator">=</span><span class="token number">2</span> foo
+PUT
+foo
+bar
+PUT
+foo
+bar_new
+</code></pre>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># watch for changes on key `foo` since revision 3</span>
+$ etcdctl <span class="token function">watch</span> --rev<span class="token operator">=</span><span class="token number">3</span> foo
+PUT
+foo
+bar_new
+</code></pre>
+<p>Here is an example to watch only from the last historical change:</p>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># watch for changes on key `foo` and return last revision value along with modified value</span>
+$ etcdctl <span class="token function">watch</span> --prev-kv foo
+<span class="token comment"># in another terminal: etcdctl put foo bar_latest</span>
+PUT
+foo         <span class="token comment"># key</span>
+bar_new     <span class="token comment"># last value of foo key before modification</span>
+foo         <span class="token comment"># key</span>
+bar_latest  <span class="token comment"># value of foo key after modification</span>
+</code></pre>
+<h2 id="watch-progress">Watch progress</h2>
+<p>Applications may want to check the progress of a watch to determine how up-to-date the watch stream is. For example, if a watch is used to update a cache, it can be useful to know if the cache is stale compared to the revision from a quorum read.</p>
+<p>Progress requests can be issued using the &quot;progress&quot; command in interactive watch session to ask the etcd server to send a progress notify update in the watch stream:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl <span class="token function">watch</span> -i
+$ <span class="token function">watch</span> a
+$ progress
+progress notify: <span class="token number">1</span>
+<span class="token comment"># in another terminal: etcdctl put x 0</span>
+<span class="token comment"># in another terminal: etcdctl put y 1</span>
+$ progress
+progress notify: <span class="token number">3</span>
+</code></pre>
+<p>Note: The revision number in the progress notify response is the revision from the local etcd server node that the watch stream is connected to. If this node is partitioned and not part of quorum, this progress notify revision might be lower than
+than the revision returned by a quorum read against a non-partitioned etcd server node.</p>
+<h2 id="compacted-revisions">Compacted revisions</h2>
+<p>As we mentioned, etcd keeps revisions so that applications can read past versions of keys. However, to avoid accumulating an unbounded amount of history, it is important to compact past revisions. After compacting, etcd removes historical revisions, releasing resources for future use. All superseded data with revisions before the compacted revision will be unavailable.</p>
+<p>Here is the command to compact the revisions:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl compact <span class="token number">5</span>
+compacted revision <span class="token number">5</span>
+
+<span class="token comment"># any revisions before the compacted one are not accessible</span>
+$ etcdctl get --rev<span class="token operator">=</span><span class="token number">4</span> foo
+Error:  rpc error: code <span class="token operator">=</span> <span class="token number">11</span> desc <span class="token operator">=</span> etcdserver: mvcc: required revision has been compacted
+</code></pre>
+<p>Note: The current revision of etcd server can be found using get command on any key (existent or non-existent) in json format. Example is shown below for mykey which does not exist in etcd server:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl get mykey -w<span class="token operator">=</span>json
+<span class="token punctuation">{</span><span class="token string">&quot;header&quot;</span>:<span class="token punctuation">{</span><span class="token string">&quot;cluster_id&quot;</span>:14841639068965178418,<span class="token string">&quot;member_id&quot;</span>:10276657743932975437,<span class="token string">&quot;revision&quot;</span>:15,<span class="token string">&quot;raft_term&quot;</span>:4<span class="token punctuation">}</span><span class="token punctuation">}</span>
+</code></pre>
+<h2 id="grant-leases">Grant leases</h2>
+<p>Applications can grant leases for keys from an etcd cluster. When a key is attached to a lease, its lifetime is bound to the lease&apos;s lifetime which in turn is governed by a time-to-live (TTL). Each lease has a minimum time-to-live (TTL) value specified by the application at grant time. The lease&apos;s actual TTL value is at least the minimum TTL and is chosen by the etcd cluster. Once a lease&apos;s TTL elapses, the lease expires and all attached keys are deleted.</p>
+<p>Here is the command to grant a lease:</p>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># grant a lease with 60 second TTL</span>
+$ etcdctl lease grant <span class="token number">60</span>
+lease 32695410dcc0ca06 granted with TTL<span class="token punctuation">(</span>60s<span class="token punctuation">)</span>
+
+<span class="token comment"># attach key foo to lease 32695410dcc0ca06</span>
+$ etcdctl put --lease<span class="token operator">=</span>32695410dcc0ca06 foo bar
+OK
+</code></pre>
+<h2 id="revoke-leases">Revoke leases</h2>
+<p>Applications revoke leases by lease ID. Revoking a lease deletes all of its attached keys.</p>
+<p>Suppose we finished the following sequence of operations:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl lease grant <span class="token number">60</span>
+lease 32695410dcc0ca06 granted with TTL<span class="token punctuation">(</span>60s<span class="token punctuation">)</span>
+$ etcdctl put --lease<span class="token operator">=</span>32695410dcc0ca06 foo bar
+OK
+</code></pre>
+<p>Here is the command to revoke the same lease:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl lease revoke 32695410dcc0ca06
+lease 32695410dcc0ca06 revoked
+
+$ etcdctl get foo
+<span class="token comment"># empty response since foo is deleted due to lease revocation</span>
+</code></pre>
+<h2 id="keep-leases-alive">Keep leases alive</h2>
+<p>Applications can keep a lease alive by refreshing its TTL so it does not expire.</p>
+<p>Suppose we finished the following sequence of operations:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl lease grant <span class="token number">60</span>
+lease 32695410dcc0ca06 granted with TTL<span class="token punctuation">(</span>60s<span class="token punctuation">)</span>
+</code></pre>
+<p>Here is the command to keep the same lease alive:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl lease keep-alive 32695410dcc0ca06
+lease 32695410dcc0ca06 keepalived with TTL<span class="token punctuation">(</span><span class="token number">60</span><span class="token punctuation">)</span>
+lease 32695410dcc0ca06 keepalived with TTL<span class="token punctuation">(</span><span class="token number">60</span><span class="token punctuation">)</span>
+lease 32695410dcc0ca06 keepalived with TTL<span class="token punctuation">(</span><span class="token number">60</span><span class="token punctuation">)</span>
+<span class="token punctuation">..</span>.
+</code></pre>
+<h2 id="get-lease-information">Get lease information</h2>
+<p>Applications may want to know about lease information, so that they can be renewed or to check if the lease still exists or it has expired. Applications may also want to know the keys to which a particular lease is attached.</p>
+<p>Suppose we finished the following sequence of operations:</p>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># grant a lease with 500 second TTL</span>
+$ etcdctl lease grant <span class="token number">500</span>
+lease 694d5765fc71500b granted with TTL<span class="token punctuation">(</span>500s<span class="token punctuation">)</span>
+
+<span class="token comment"># attach key zoo1 to lease 694d5765fc71500b</span>
+$ etcdctl put zoo1 val1 --lease<span class="token operator">=</span>694d5765fc71500b
+OK
+
+<span class="token comment"># attach key zoo2 to lease 694d5765fc71500b</span>
+$ etcdctl put zoo2 val2 --lease<span class="token operator">=</span>694d5765fc71500b
+OK
+</code></pre>
+<p>Here is the command to get information about the lease:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl lease timetolive 694d5765fc71500b
+lease 694d5765fc71500b granted with TTL<span class="token punctuation">(</span>500s<span class="token punctuation">)</span>, remaining<span class="token punctuation">(</span>258s<span class="token punctuation">)</span>
+</code></pre>
+<p>Here is the command to get information about the lease along with the keys attached with the lease:</p>
+<pre class="language-"><code class="lang-bash">$ etcdctl lease timetolive --keys 694d5765fc71500b
+lease 694d5765fc71500b granted with TTL<span class="token punctuation">(</span>500s<span class="token punctuation">)</span>, remaining<span class="token punctuation">(</span>132s<span class="token punctuation">)</span>, attached keys<span class="token punctuation">(</span><span class="token punctuation">[</span>zoo2 zoo1<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># if the lease has expired or does not exist it will give the below response:</span>
+Error:  etcdserver: requested lease not found
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="grpc_naming.html" class="navigation navigation-prev " aria-label="Previous page: G RPC Naming And Discovery">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="limit.html" class="navigation navigation-next " aria-label="Next page: System Limits">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Interacting With Etcd","weight":3250,"description":"etcdctl: a command line tool for interacting with the etcd server","level":"1.2.8","depth":2,"next":{"title":"System Limits","level":"1.2.9","depth":2,"path":"dev-guide/limit.md","ref":"dev-guide/limit.md","articles":[]},"previous":{"title":"G RPC Naming And Discovery","level":"1.2.7","depth":2,"path":"dev-guide/grpc_naming.md","ref":"dev-guide/grpc_naming.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-highlight","-livereload","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"etcd 英文文档","language":"us-en","links":{"sidebar":{"Home":"https://docs.khs1994.com"}},"gitbook":"*"},"file":{"path":"dev-guide/interacting_v3.md","mtime":"2024-09-13T01:00:24.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-09-13T01:01:05.458Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

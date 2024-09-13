@@ -1,0 +1,1793 @@
+
+<!DOCTYPE HTML>
+<html lang="us-en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Downgrade etcd from 3.5 to 3.4 · etcd 英文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="Processes, checklists, and notes on downgrading etcd from 3.5 to 3.4">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="downgrading-etcd.html" />
+    
+    
+    <link rel="prev" href="_index.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://docs.khs1994.com" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" >
+            
+                <span>
+            
+                    
+                    Benchmarks
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../benchmarks/_index.html">
+            
+                <a href="../benchmarks/_index.html">
+            
+                    
+                    Benchmarks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../benchmarks/etcd-2-1-0-alpha-benchmarks.html">
+            
+                <a href="../benchmarks/etcd-2-1-0-alpha-benchmarks.html">
+            
+                    
+                    Benchmarking etcd v2.1.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../benchmarks/etcd-2-2-0-benchmarks.html">
+            
+                <a href="../benchmarks/etcd-2-2-0-benchmarks.html">
+            
+                    
+                    Benchmarking etcd v2.2.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../benchmarks/etcd-2-2-0-rc-benchmarks.html">
+            
+                <a href="../benchmarks/etcd-2-2-0-rc-benchmarks.html">
+            
+                    
+                    Benchmarking etcd v2.2.0-rc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../benchmarks/etcd-2-2-0-rc-memory-benchmarks.html">
+            
+                <a href="../benchmarks/etcd-2-2-0-rc-memory-benchmarks.html">
+            
+                    
+                    Benchmarking etcd v2.2.0-rc-memory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="../benchmarks/etcd-3-demo-benchmarks.html">
+            
+                <a href="../benchmarks/etcd-3-demo-benchmarks.html">
+            
+                    
+                    Benchmarking Etcd V 3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="../benchmarks/etcd-3-watch-memory-benchmark.html">
+            
+                <a href="../benchmarks/etcd-3-watch-memory-benchmark.html">
+            
+                    
+                    Watch Memory Usage Benchmark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.8" data-path="../benchmarks/etcd-storage-memory-benchmark.html">
+            
+                <a href="../benchmarks/etcd-storage-memory-benchmark.html">
+            
+                    
+                    Storage Memory Usage Benchmark
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Dev Guide
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../dev-guide/_index.html">
+            
+                <a href="../dev-guide/_index.html">
+            
+                    
+                    Developer Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../dev-guide/api_concurrency_reference_v3.html">
+            
+                <a href="../dev-guide/api_concurrency_reference_v3.html">
+            
+                    
+                    API Reference Concurrency
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../dev-guide/api_grpc_gateway.html">
+            
+                <a href="../dev-guide/api_grpc_gateway.html">
+            
+                    
+                    Why G RPC Gateway
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../dev-guide/api_reference_v3.html">
+            
+                <a href="../dev-guide/api_reference_v3.html">
+            
+                    
+                    API Reference
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../dev-guide/discovery_protocol.html">
+            
+                <a href="../dev-guide/discovery_protocol.html">
+            
+                    
+                    Discovery Service Protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../dev-guide/features.html">
+            
+                <a href="../dev-guide/features.html">
+            
+                    
+                    Etcd Features
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../dev-guide/grpc_naming.html">
+            
+                <a href="../dev-guide/grpc_naming.html">
+            
+                    
+                    G RPC Naming And Discovery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../dev-guide/interacting_v3.html">
+            
+                <a href="../dev-guide/interacting_v3.html">
+            
+                    
+                    Interacting With Etcd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../dev-guide/limit.html">
+            
+                <a href="../dev-guide/limit.html">
+            
+                    
+                    System Limits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../dev-guide/local_cluster.html">
+            
+                <a href="../dev-guide/local_cluster.html">
+            
+                    
+                    Set Up A Local Cluster
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Dev Internal
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../dev-internal/discovery_protocol.html">
+            
+                <a href="../dev-internal/discovery_protocol.html">
+            
+                    
+                    Discovery Service Protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../dev-internal/logging.html">
+            
+                <a href="../dev-internal/logging.html">
+            
+                    
+                    Logging Conventions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../dev-internal/modules.html">
+            
+                <a href="../dev-internal/modules.html">
+            
+                    
+                    Golang Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Downgrades
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="_index.html">
+            
+                <a href="_index.html">
+            
+                    
+                    Downgrading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.2" data-path="downgrade_3_5.html">
+            
+                <a href="downgrade_3_5.html">
+            
+                    
+                    Downgrade etcd from 3.5 to 3.4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="downgrading-etcd.html">
+            
+                <a href="downgrading-etcd.html">
+            
+                    
+                    Downgrading Etcd Clusters And Applications
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Learning
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../learning/_index.html">
+            
+                <a href="../learning/_index.html">
+            
+                    
+                    Learning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../learning/api_guarantees.html">
+            
+                <a href="../learning/api_guarantees.html">
+            
+                    
+                    Etcd API Guarantees
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../learning/api.html">
+            
+                <a href="../learning/api.html">
+            
+                    
+                    Etcd API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../learning/data_model.html">
+            
+                <a href="../learning/data_model.html">
+            
+                    
+                    Data Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../learning/design-auth-v3.html">
+            
+                <a href="../learning/design-auth-v3.html">
+            
+                    
+                    Etcd V 3 Authentication Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../learning/design-client.html">
+            
+                <a href="../learning/design-client.html">
+            
+                    
+                    Etcd Client Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../learning/design-learner.html">
+            
+                <a href="../learning/design-learner.html">
+            
+                    
+                    Etcd Learner Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../learning/glossary.html">
+            
+                <a href="../learning/glossary.html">
+            
+                    
+                    Glossary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../learning/persistent-storage-files.html">
+            
+                <a href="../learning/persistent-storage-files.html">
+            
+                    
+                    Etcd Persistent Storage Files
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../learning/why.html">
+            
+                <a href="../learning/why.html">
+            
+                    
+                    Etcd Versus Other Key Value Stores
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Op Guide
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" >
+            
+                <span>
+            
+                    
+                    Authentication
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../op-guide/authentication/_index.html">
+            
+                <a href="../op-guide/authentication/_index.html">
+            
+                    
+                    Authentication Guides
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../op-guide/authentication/authentication.html">
+            
+                <a href="../op-guide/authentication/authentication.html">
+            
+                    
+                    Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="../op-guide/authentication/rbac.html">
+            
+                <a href="../op-guide/authentication/rbac.html">
+            
+                    
+                    Role Based Access Control
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../op-guide/_index.html">
+            
+                <a href="../op-guide/_index.html">
+            
+                    
+                    Operations Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../op-guide/clustering.html">
+            
+                <a href="../op-guide/clustering.html">
+            
+                    
+                    Clustering Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../op-guide/configuration.html">
+            
+                <a href="../op-guide/configuration.html">
+            
+                    
+                    Configuration Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../op-guide/container.html">
+            
+                <a href="../op-guide/container.html">
+            
+                    
+                    Run Etcd Clusters Inside Containers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../op-guide/data_corruption.html">
+            
+                <a href="../op-guide/data_corruption.html">
+            
+                    
+                    Data Corruption
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../op-guide/failures.html">
+            
+                <a href="../op-guide/failures.html">
+            
+                    
+                    Failure Modes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../op-guide/gateway.html">
+            
+                <a href="../op-guide/gateway.html">
+            
+                    
+                    Etcd Gateway
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../op-guide/grpc_proxy.html">
+            
+                <a href="../op-guide/grpc_proxy.html">
+            
+                    
+                    G RPC Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../op-guide/hardware.html">
+            
+                <a href="../op-guide/hardware.html">
+            
+                    
+                    Hardware Recommendations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../op-guide/kubernetes.html">
+            
+                <a href="../op-guide/kubernetes.html">
+            
+                    
+                    Run Etcd Clusters As A Kubernetes Stateful Set
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="../op-guide/maintenance.html">
+            
+                <a href="../op-guide/maintenance.html">
+            
+                    
+                    Maintenance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="../op-guide/monitoring.html">
+            
+                <a href="../op-guide/monitoring.html">
+            
+                    
+                    Monitoring Etcd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="../op-guide/performance.html">
+            
+                <a href="../op-guide/performance.html">
+            
+                    
+                    Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.15" data-path="../op-guide/recovery.html">
+            
+                <a href="../op-guide/recovery.html">
+            
+                    
+                    Disaster Recovery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.16" data-path="../op-guide/runtime-configuration.html">
+            
+                <a href="../op-guide/runtime-configuration.html">
+            
+                    
+                    Runtime Reconfiguration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.17" data-path="../op-guide/runtime-reconf-design.html">
+            
+                <a href="../op-guide/runtime-reconf-design.html">
+            
+                    
+                    Design Of Runtime Reconfiguration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.18" data-path="../op-guide/security.html">
+            
+                <a href="../op-guide/security.html">
+            
+                    
+                    Transport Security Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.19" data-path="../op-guide/supported-platform.html">
+            
+                <a href="../op-guide/supported-platform.html">
+            
+                    
+                    Supported Platforms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.20" data-path="../op-guide/versioning.html">
+            
+                <a href="../op-guide/versioning.html">
+            
+                    
+                    Versioning
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Triage
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../triage/_index.html">
+            
+                <a href="../triage/_index.html">
+            
+                    
+                    Triage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../triage/issues.html">
+            
+                <a href="../triage/issues.html">
+            
+                    
+                    Issue Triage Guidelines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../triage/PRs.html">
+            
+                <a href="../triage/PRs.html">
+            
+                    
+                    PR Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../tutorials/_index.html">
+            
+                <a href="../tutorials/_index.html">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../tutorials/how-to-check-cluster-status.html">
+            
+                <a href="../tutorials/how-to-check-cluster-status.html">
+            
+                    
+                    How To Check Cluster Status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../tutorials/how-to-conduct-elections.html">
+            
+                <a href="../tutorials/how-to-conduct-elections.html">
+            
+                    
+                    How To Conduct Leader Election In Etcd Cluster
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../tutorials/how-to-create-lease.html">
+            
+                <a href="../tutorials/how-to-create-lease.html">
+            
+                    
+                    How To Create Lease
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../tutorials/how-to-create-locks.html">
+            
+                <a href="../tutorials/how-to-create-locks.html">
+            
+                    
+                    How To Create Locks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../tutorials/how-to-deal-with-membership.html">
+            
+                <a href="../tutorials/how-to-deal-with-membership.html">
+            
+                    
+                    How To Add And Remove Members
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../tutorials/how-to-delete-keys.html">
+            
+                <a href="../tutorials/how-to-delete-keys.html">
+            
+                    
+                    How To Delete Keys
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../tutorials/how-to-get-key-by-prefix.html">
+            
+                <a href="../tutorials/how-to-get-key-by-prefix.html">
+            
+                    
+                    How To Get Keys By Prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../tutorials/how-to-migrate.html">
+            
+                <a href="../tutorials/how-to-migrate.html">
+            
+                    
+                    How To Migrate Etcd From V 2 To V 3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="../tutorials/how-to-save-database.html">
+            
+                <a href="../tutorials/how-to-save-database.html">
+            
+                    
+                    How To Save The Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="../tutorials/how-to-setup-cluster.html">
+            
+                <a href="../tutorials/how-to-setup-cluster.html">
+            
+                    
+                    How To Set Up A Demo Etcd Cluster
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.12" data-path="../tutorials/how-to-transactional-write.html">
+            
+                <a href="../tutorials/how-to-transactional-write.html">
+            
+                    
+                    How To Make Multiple Writes In A Transaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.13" data-path="../tutorials/how-to-watch-keys.html">
+            
+                <a href="../tutorials/how-to-watch-keys.html">
+            
+                    
+                    How To Watch Keys
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.14" data-path="../tutorials/reading-from-etcd.html">
+            
+                <a href="../tutorials/reading-from-etcd.html">
+            
+                    
+                    Reading From Etcd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.15" data-path="../tutorials/writing-to-etcd.html">
+            
+                <a href="../tutorials/writing-to-etcd.html">
+            
+                    
+                    Writing To Etcd
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    Upgrades
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../upgrades/_index.html">
+            
+                <a href="../upgrades/_index.html">
+            
+                    
+                    Upgrading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../upgrades/upgrade_3_0.html">
+            
+                <a href="../upgrades/upgrade_3_0.html">
+            
+                    
+                    Upgrade etcd from 2.3 to 3.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../upgrades/upgrade_3_1.html">
+            
+                <a href="../upgrades/upgrade_3_1.html">
+            
+                    
+                    Upgrade etcd from 3.0 to 3.1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../upgrades/upgrade_3_2.html">
+            
+                <a href="../upgrades/upgrade_3_2.html">
+            
+                    
+                    Upgrade etcd from 3.1 to 3.2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../upgrades/upgrade_3_3.html">
+            
+                <a href="../upgrades/upgrade_3_3.html">
+            
+                    
+                    Upgrade etcd from 3.2 to 3.3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../upgrades/upgrade_3_4.html">
+            
+                <a href="../upgrades/upgrade_3_4.html">
+            
+                    
+                    Upgrade etcd from 3.3 to 3.4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../upgrades/upgrade_3_5.html">
+            
+                <a href="../upgrades/upgrade_3_5.html">
+            
+                    
+                    Upgrade etcd from 3.4 to 3.5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../upgrades/upgrading-etcd.html">
+            
+                <a href="../upgrades/upgrading-etcd.html">
+            
+                    
+                    Upgrading Etcd Clusters And Applications
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../demo.html">
+            
+                <a href="../demo.html">
+            
+                    
+                    Demo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../faq.html">
+            
+                <a href="../faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../install.html">
+            
+                <a href="../install.html">
+            
+                    
+                    Install
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../integrations.html">
+            
+                <a href="../integrations.html">
+            
+                    
+                    Libraries And Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../metrics.html">
+            
+                <a href="../metrics.html">
+            
+                    
+                    Metrics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../quickstart.html">
+            
+                <a href="../quickstart.html">
+            
+                    
+                    Quickstart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    v3.5 docs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../reporting_bugs.html">
+            
+                <a href="../reporting_bugs.html">
+            
+                    
+                    Reporting Bugs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../tuning.html">
+            
+                <a href="../tuning.html">
+            
+                    
+                    Tuning
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Downgrade etcd from 3.5 to 3.4</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>In the general case, downgrading from etcd 3.5 to 3.4 can be a zero-downtime, rolling downgrade:</p>
+<ul>
+<li>one by one, stop the etcd 3.5 processes and replace them with etcd 3.4 processes</li>
+<li>after starting any 3.4 processes, new features in 3.5 are not longer available to the cluster</li>
+</ul>
+<p>Before <a href="#downgrade-procedure">starting a downgrade</a>, read through the rest of this guide to prepare.</p>
+<h3 id="downgrade-checklists">Downgrade checklists</h3>
+<p>content/en/docs/v3.5/op-guide/authentication/rbac.md</p>
+<p><strong>NOTE:</strong> If your cluster enables auth, rolling downgrade from 3.5 isn&apos;t supported because 3.5 <a href="https://github.com/etcd-io/etcd/pull/11943" target="_blank">changes a format of WAL entries related to auth</a>. You can follow the <a href="../../op-guide/authentication/rbac">authentification instructions</a> to disable auth, and delete all users first.</p>
+<p>Highlighted breaking changes from 3.5 to 3.4:</p>
+<h4 id="difference-in-flags">Difference in flags</h4>
+<p>If you are using any of the following flags in your 3.5 configurations, make sure to remove, rename, or change the default value when downgrading to 3.4.</p>
+<p><strong>NOTE</strong> The diff is based on version 3.5.14 and v.3.4.33. The actual diff would be dependent on your patch version, check with <code>diff &lt;(etcd-3.5/bin/etcd -h | grep \\-\\-) &lt;(etcd-3.4/bin/etcd -h | grep \\-\\-)</code> first.</p>
+<pre class="language-"><code class="lang-diff"># flags not available in 3.4
+<span class="token deleted-sign deleted">-etcd --socket-reuse-port
+-etcd --socket-reuse-address
+-etcd --raft-read-timeout
+-etcd --raft-write-timeout
+-etcd --v2-deprecation
+-etcd --client-cert-file
+-etcd --client-key-file
+-etcd --peer-client-cert-file
+-etcd --peer-client-key-file
+-etcd --self-signed-cert-validity
+-etcd --enable-log-rotation --log-rotation-config-json=some.json
+-etcd --experimental-enable-distributed-tracing --experimental-distributed-tracing-address=&apos;localhost:4317&apos; --experimental-distributed-tracing-service-name=&apos;etcd&apos; --experimental-distributed-tracing-instance-id=&apos;&apos; --experimental-distributed-tracing-sampling-rate=&apos;0&apos;
+-etcd --experimental-compact-hash-check-enabled --experimental-compact-hash-check-time=&apos;1m&apos;
+-etcd --experimental-downgrade-check-time
+-etcd --experimental-memory-mlock
+-etcd --experimental-txn-mode-write-with-shared-buffer
+-etcd --experimental-bootstrap-defrag-threshold-megabytes
+-etcd --experimental-stop-grpc-service-on-defrag
+</span>
+# same flag with different names
+<span class="token deleted-sign deleted">-etcd --backend-bbolt-freelist-type=map
+</span><span class="token inserted-sign inserted">+etcd --experimental-backend-bbolt-freelist-type=array
+</span>
+# same flag different defaults
+<span class="token deleted-sign deleted">-etcd --pre-vote=true
+</span><span class="token inserted-sign inserted">+etcd --pre-vote=false
+</span>
+<span class="token deleted-sign deleted">-etcd --logger=zap
+</span><span class="token inserted-sign inserted">+etcd --logger=capnslog
+</span></code></pre>
+<h4 id="etcd---logger-zap"><code>etcd --logger zap</code></h4>
+<p>3.4 defaults to <code>--logger=capnslog</code> while 3.5 defaults <code>--logger=zap</code>.</p>
+<p>If you want to keep using <code>zap</code>, it needs to be explicitly specified.</p>
+<pre class="language-"><code class="lang-diff"><span class="token inserted-sign inserted">+etcd --logger=zap --log-outputs=stderr
+</span>
+<span class="token inserted-sign inserted">+# to write logs to stderr and a.log file at the same time
++etcd --logger=zap --log-outputs=stderr,a.log
+</span></code></pre>
+<h4 id="difference-in-prometheus-metrics">Difference in Prometheus metrics</h4>
+<pre class="language-"><code class="lang-diff"># metrics not available in 3.4
+<span class="token deleted-sign deleted">-etcd_debugging_mvcc_db_compaction_last
+</span></code></pre>
+<h3 id="server-downgrade-checklists">Server downgrade checklists</h3>
+<h4 id="downgrade-requirements">Downgrade requirements</h4>
+<p>To ensure a smooth rolling downgrade, the running cluster must be healthy. Check the health of the cluster by using the <code>etcdctl endpoint health</code> command before proceeding.</p>
+<p>The 3.4 version to downgrade to must be &gt;= 3.4.32.</p>
+<h4 id="preparation">Preparation</h4>
+<p>Before downgrading etcd, always test the services relying on etcd in a staging environment before deploying the downgrade to the production environment.</p>
+<p>Before beginning, <a href="../../op-guide/maintenance#snapshot-backup">download the snapshot backup</a>. Should something go wrong with the downgrade, it is possible to use this backup to <a href="#rollback">rollback</a> back to existing etcd version. Please note that the <code>snapshot</code> command only backs up the v3 data. For v2 data, see <a href="../docs/v2.3/admin_guide#backing-up-the-datastore">backing up v2 datastore</a>.</p>
+<p>Before beginning, download the latest release of etcd 3.4, and make sure its version is &gt;= 3.4.32.</p>
+<h4 id="mixed-versions">Mixed versions</h4>
+<p>While downgrading, an etcd cluster supports mixed versions of etcd members, and operates with the protocol of the lowest common version. The cluster is considered downgraded once any of its members is downgraded to version 3.4. Internally, etcd members negotiate with each other to determine the overall cluster version, which controls the reported version and the supported features.</p>
+<h4 id="limitations">Limitations</h4>
+<p>Note: If the cluster only has v3 data and no v2 data, it is not subject to this limitation.</p>
+<p>If the cluster is serving a v2 data set larger than 50MB, each newly downgraded member may take up to two minutes to catch up with the existing cluster. Check the size of a recent snapshot to estimate the total data size. In other words, it is safest to wait for 2 minutes between downgrading each member.</p>
+<p>For a much larger total data size, 100MB or more , this one-time process might take even more time. Administrators of very large etcd clusters of this magnitude can feel free to contact the <a href="https://groups.google.com/g/etcd-dev" target="_blank">etcd team</a> before downgrading, and we&apos;ll be happy to provide advice on the procedure.</p>
+<h4 id="rollback">Rollback</h4>
+<p>If any member has been downgraded to 3.4, the cluster version will be downgraded to 3.4, and operations will be &quot;3.4&quot; compatible. You would need to follow the <a href="../../upgrades/upgrade_3_5">Upgrade etcd from 3.4 to 3.5</a> instructions to rollback.</p>
+<p>Please <a href="../../op-guide/maintenance#snapshot-backup">download the snapshot backup</a> to make downgrading the cluster possible even after it has been completely downgraded.</p>
+<h3 id="downgrade-procedure">Downgrade procedure</h3>
+<p>This example shows how to downgrade a 3-member 3.5 etcd cluster running on a local machine.</p>
+<h4 id="step-1-check-downgrade-requirements">Step 1: check downgrade requirements</h4>
+<p>Is the cluster healthy and running 3.5.x?</p>
+<pre class="language-"><code class="lang-bash">etcdctl --endpoints<span class="token operator">=</span>localhost:2379,localhost:22379,localhost:32379 endpoint health
+<span class="token operator">&lt;&lt;</span><span class="token string">COMMENT
+localhost:2379 is healthy: successfully committed proposal: took = 2.118638ms
+localhost:22379 is healthy: successfully committed proposal: took = 3.631388ms
+localhost:32379 is healthy: successfully committed proposal: took = 2.157051ms
+COMMENT</span>
+
+<span class="token function">curl</span> http://localhost:2379/version
+<span class="token operator">&lt;&lt;</span><span class="token string">COMMENT
+{&quot;etcdserver&quot;:&quot;3.5.0&quot;,&quot;etcdcluster&quot;:&quot;3.5.0&quot;}
+COMMENT</span>
+
+<span class="token function">curl</span> http://localhost:22379/version
+<span class="token operator">&lt;&lt;</span><span class="token string">COMMENT
+{&quot;etcdserver&quot;:&quot;3.5.0&quot;,&quot;etcdcluster&quot;:&quot;3.5.0&quot;}
+COMMENT</span>
+
+<span class="token function">curl</span> http://localhost:32379/version
+<span class="token operator">&lt;&lt;</span><span class="token string">COMMENT
+{&quot;etcdserver&quot;:&quot;3.5.0&quot;,&quot;etcdcluster&quot;:&quot;3.5.0&quot;}
+COMMENT</span>
+</code></pre>
+<h4 id="step-2-download-snapshot-backup-from-leader">Step 2: download snapshot backup from leader</h4>
+<p><a href="../../op-guide/maintenance#snapshot-backup">Download the snapshot backup</a> to provide a downgrade path should any problems occur.</p>
+<h4 id="step-3-stop-one-existing-etcd-server">Step 3: stop one existing etcd server</h4>
+<p>Before stopping the server, check if it is the leader</p>
+<pre class="language-"><code class="lang-bash">etcdctl --endpoints<span class="token operator">=</span>localhost:2379,localhost:22379,localhost:32379 endpoint status -w<span class="token operator">=</span>table
+<span class="token operator">&lt;&lt;</span><span class="token string">COMMENT
++-----------------+------------------+---------+---------+-----------+------------+-----------+------------+--------------------+--------+
+|    ENDPOINT     |        ID        | VERSION | DB SIZE | IS LEADER | IS LEARNER | RAFT TERM | RAFT INDEX | RAFT APPLIED INDEX | ERRORS |
++-----------------+------------------+---------+---------+-----------+------------+-----------+------------+--------------------+--------+
+|  localhost:2379 | 8211f1d0f64f3269 |  3.5.13 |   20 kB |      true |      false |         2 |          9 |                  9 |        |
+| localhost:22379 | 91bc3c398fb3c146 |  3.5.13 |   20 kB |     false |      false |         2 |          9 |                  9 |        |
+| localhost:32379 | fd422379fda50e48 |  3.5.13 |   20 kB |     false |      false |         2 |          9 |                  9 |        |
++-----------------+------------------+---------+---------+-----------+------------+-----------+------------+--------------------+--------+
+COMMENT</span>
+</code></pre>
+<p>If the server to be stopped is the leader, you can avoid some downtime by <code>move-leader</code> to another server before stopping this server.</p>
+<pre class="language-"><code class="lang-bash">etcdctl --endpoints<span class="token operator">=</span>localhost:2379,localhost:22379,localhost:32379 move-leader 91bc3c398fb3c146
+
+etcdctl --endpoints<span class="token operator">=</span>localhost:2379,localhost:22379,localhost:32379 endpoint status -w<span class="token operator">=</span>table
+<span class="token operator">&lt;&lt;</span><span class="token string">COMMENT
++-----------------+------------------+---------+---------+-----------+------------+-----------+------------+--------------------+--------+
+|    ENDPOINT     |        ID        | VERSION | DB SIZE | IS LEADER | IS LEARNER | RAFT TERM | RAFT INDEX | RAFT APPLIED INDEX | ERRORS |
++-----------------+------------------+---------+---------+-----------+------------+-----------+------------+--------------------+--------+
+|  localhost:2379 | 8211f1d0f64f3269 |  3.5.13 |   20 kB |     false |      false |         3 |         11 |                 11 |        |
+| localhost:22379 | 91bc3c398fb3c146 |  3.5.13 |   20 kB |      true |      false |         3 |         11 |                 11 |        |
+| localhost:32379 | fd422379fda50e48 |  3.5.13 |   20 kB |     false |      false |         3 |         11 |                 11 |        |
++-----------------+------------------+---------+---------+-----------+------------+-----------+------------+--------------------+--------+
+COMMENT</span>
+</code></pre>
+<p>When each etcd process is stopped, expected errors will be logged by other cluster members. This is normal since a cluster member connection has been (temporarily) broken:</p>
+<pre class="language-"><code class="lang-bash"><span class="token punctuation">{</span><span class="token string">&quot;level&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;info&quot;</span>,<span class="token string">&quot;ts&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;2024-05-14T20:25:47.051124Z&quot;</span>,<span class="token string">&quot;logger&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;raft&quot;</span>,<span class="token string">&quot;caller&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;etcdserver/zap_raft.go:77&quot;</span>,<span class="token string">&quot;msg&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;91bc3c398fb3c146 became leader at term 3&quot;</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">&quot;level&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;info&quot;</span>,<span class="token string">&quot;ts&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;2024-05-14T20:25:47.051139Z&quot;</span>,<span class="token string">&quot;logger&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;raft&quot;</span>,<span class="token string">&quot;caller&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;etcdserver/zap_raft.go:77&quot;</span>,<span class="token string">&quot;msg&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;raft.node: 91bc3c398fb3c146 elected leader 91bc3c398fb3c146 at term 3&quot;</span><span class="token punctuation">}</span>
+
+^C<span class="token punctuation">{</span><span class="token string">&quot;level&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;warn&quot;</span>,<span class="token string">&quot;ts&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;2024-05-14T20:27:09.094119Z&quot;</span>,<span class="token string">&quot;caller&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;rafthttp/stream.go:421&quot;</span>,<span class="token string">&quot;msg&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;lost TCP streaming connection with remote peer&quot;</span>,<span class="token string">&quot;stream-reader-type&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;stream MsgApp v2&quot;</span>,<span class="token string">&quot;local-member-id&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;91bc3c398fb3c146&quot;</span>,<span class="token string">&quot;remote-peer-id&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;8211f1d0f64f3269&quot;</span>,<span class="token string">&quot;error&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;EOF&quot;</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">&quot;level&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;warn&quot;</span>,<span class="token string">&quot;ts&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;2024-05-14T20:27:09.09427Z&quot;</span>,<span class="token string">&quot;caller&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;rafthttp/stream.go:421&quot;</span>,<span class="token string">&quot;msg&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;lost TCP streaming connection with remote peer&quot;</span>,<span class="token string">&quot;stream-reader-type&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;stream Message&quot;</span>,<span class="token string">&quot;local-member-id&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;91bc3c398fb3c146&quot;</span>,<span class="token string">&quot;remote-peer-id&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;8211f1d0f64f3269&quot;</span>,<span class="token string">&quot;error&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;EOF&quot;</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">&quot;level&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;warn&quot;</span>,<span class="token string">&quot;ts&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;2024-05-14T20:27:09.095535Z&quot;</span>,<span class="token string">&quot;caller&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;rafthttp/peer_status.go:66&quot;</span>,<span class="token string">&quot;msg&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;peer became inactive (message send to peer failed)&quot;</span>,<span class="token string">&quot;peer-id&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;8211f1d0f64f3269&quot;</span>,<span class="token string">&quot;error&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;failed to dial 8211f1d0f64f3269 on stream MsgApp v2 (peer 8211f1d0f64f3269 failed to find local node 91bc3c398fb3c146)&quot;</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">&quot;level&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;warn&quot;</span>,<span class="token string">&quot;ts&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;2024-05-14T20:27:09.43915Z&quot;</span>,<span class="token string">&quot;caller&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;rafthttp/stream.go:223&quot;</span>,<span class="token string">&quot;msg&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;lost TCP streaming connection with remote peer&quot;</span>,<span class="token string">&quot;stream-writer-type&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;stream Message&quot;</span>,<span class="token string">&quot;local-member-id&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;91bc3c398fb3c146&quot;</span>,<span class="token string">&quot;remote-peer-id&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;8211f1d0f64f3269&quot;</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">&quot;level&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;warn&quot;</span>,<span class="token string">&quot;ts&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;2024-05-14T20:27:11.085646Z&quot;</span>,<span class="token string">&quot;caller&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;etcdserver/cluster_util.go:294&quot;</span>,<span class="token string">&quot;msg&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;failed to reach the peer URL&quot;</span>,<span class="token string">&quot;address&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;http://127.0.0.1:12380/version&quot;</span>,<span class="token string">&quot;remote-member-id&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;8211f1d0f64f3269&quot;</span>,<span class="token string">&quot;error&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;Get <span class="token entity" title="\&quot;">\&quot;</span>http://127.0.0.1:12380/version<span class="token entity" title="\&quot;">\&quot;</span>: dial tcp 127.0.0.1:12380: connect: connection refused&quot;</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">&quot;level&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;warn&quot;</span>,<span class="token string">&quot;ts&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;2024-05-14T20:27:11.085718Z&quot;</span>,<span class="token string">&quot;caller&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;etcdserver/cluster_util.go:158&quot;</span>,<span class="token string">&quot;msg&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;failed to get version&quot;</span>,<span class="token string">&quot;remote-member-id&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;8211f1d0f64f3269&quot;</span>,<span class="token string">&quot;error&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;Get <span class="token entity" title="\&quot;">\&quot;</span>http://127.0.0.1:12380/version<span class="token entity" title="\&quot;">\&quot;</span>: dial tcp 127.0.0.1:12380: connect: connection refused&quot;</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">&quot;level&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;warn&quot;</span>,<span class="token string">&quot;ts&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;2024-05-14T20:27:13.557385Z&quot;</span>,<span class="token string">&quot;caller&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;rafthttp/probing_status.go:68&quot;</span>,<span class="token string">&quot;msg&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;prober detected unhealthy status&quot;</span>,<span class="token string">&quot;round-tripper-name&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;ROUND_TRIPPER_SNAPSHOT&quot;</span>,<span class="token string">&quot;remote-peer-id&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;8211f1d0f64f3269&quot;</span>,<span class="token string">&quot;rtt&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;416.079&#xB5;s&quot;</span>,<span class="token string">&quot;error&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;dial tcp 127.0.0.1:12380: connect: connection refused&quot;</span><span class="token punctuation">}</span>
+</code></pre>
+<h4 id="step-4-restart-the-etcd-server-with-same-configuration----next-cluster-version-compatible">Step 4: restart the etcd server with same configuration + <code>--next-cluster-version-compatible</code></h4>
+<p>Restart the etcd server with same configuration but with the new etcd binary and <code>--next-cluster-version-compatible</code>.</p>
+<pre class="language-"><code class="lang-diff"><span class="token deleted-sign deleted">-etcd-old --name s1 \
+</span><span class="token inserted-sign inserted">+etcd-new --name s1 \
+</span><span class="token unchanged">  --data-dir /tmp/etcd/s1 \
+  --listen-client-urls http://localhost:2379 \
+  --advertise-client-urls http://localhost:2379 \
+  --listen-peer-urls http://localhost:2380 \
+  --initial-advertise-peer-urls http://localhost:2380 \
+  --initial-cluster s1=http://localhost:2380,s2=http://localhost:22380,s3=http://localhost:32380 \
+  --initial-cluster-token tkn \
+  --initial-cluster-state existing
+  --next-cluster-version-compatible
+</span></code></pre>
+<p>The new 3.4 etcd will publish its information to the cluster. At this point, cluster will start to operate as 3.4 protocol, which is the lowest common version.</p>
+<blockquote>
+<p><code>{&quot;level&quot;:&quot;info&quot;,&quot;ts&quot;:&quot;2024-05-13T21:05:43.981445Z&quot;,&quot;caller&quot;:&quot;membership/cluster.go:561&quot;,&quot;msg&quot;:&quot;set initial cluster version&quot;,&quot;cluster-id&quot;:&quot;ef37ad9dc622a7c4&quot;,&quot;local-member-id&quot;:&quot;8211f1d0f64f3269&quot;,&quot;cluster-version&quot;:&quot;3.0&quot;}</code></p>
+<p><code>{&quot;level&quot;:&quot;info&quot;,&quot;ts&quot;:&quot;2024-05-13T21:05:43.982188Z&quot;,&quot;caller&quot;:&quot;api/capability.go:77&quot;,&quot;msg&quot;:&quot;enabled capabilities for version&quot;,&quot;cluster-version&quot;:&quot;3.0&quot;}</code></p>
+<p><code>{&quot;level&quot;:&quot;info&quot;,&quot;ts&quot;:&quot;2024-05-13T21:05:43.982312Z&quot;,&quot;caller&quot;:&quot;membership/cluster.go:549&quot;,&quot;msg&quot;:&quot;updated cluster version&quot;,&quot;cluster-id&quot;:&quot;ef37ad9dc622a7c4&quot;,&quot;local-member-id&quot;:&quot;8211f1d0f64f3269&quot;,&quot;from&quot;:&quot;3.0&quot;,&quot;from&quot;:&quot;3.5&quot;}</code></p>
+<p><code>{&quot;level&quot;:&quot;info&quot;,&quot;ts&quot;:&quot;2024-05-13T21:05:43.982376Z&quot;,&quot;caller&quot;:&quot;api/capability.go:77&quot;,&quot;msg&quot;:&quot;enabled capabilities for version&quot;,&quot;cluster-version&quot;:&quot;3.5&quot;}</code></p>
+<p><code>{&quot;level&quot;:&quot;info&quot;,&quot;ts&quot;:&quot;2024-05-13T21:05:44.000672Z&quot;,&quot;caller&quot;:&quot;etcdserver/server.go:2152&quot;,&quot;msg&quot;:&quot;published local member to cluster through raft&quot;,&quot;local-member-id&quot;:&quot;8211f1d0f64f3269&quot;,&quot;local-member-attributes&quot;:&quot;{Name:infra1 ClientURLs:[http://127.0.0.1:2379]}&quot;,&quot;request-path&quot;:&quot;/0/members/8211f1d0f64f3269/attributes&quot;,&quot;cluster-id&quot;:&quot;ef37ad9dc622a7c4&quot;,&quot;publish-timeout&quot;:&quot;7s&quot;}</code></p>
+<p><code>{&quot;level&quot;:&quot;info&quot;,&quot;ts&quot;:&quot;2024-05-13T21:05:46.452631Z&quot;,&quot;caller&quot;:&quot;membership/cluster.go:549&quot;,&quot;msg&quot;:&quot;updated cluster version&quot;,&quot;cluster-id&quot;:&quot;ef37ad9dc622a7c4&quot;,&quot;local-member-id&quot;:&quot;8211f1d0f64f3269&quot;,&quot;from&quot;:&quot;3.5&quot;,&quot;from&quot;:&quot;3.4&quot;}</code></p>
+</blockquote>
+<p>Verify that each member, and then the entire cluster, becomes healthy with the new 3.4 etcd binary:</p>
+<pre class="language-"><code class="lang-bash">etcdctl endpoint health --endpoints<span class="token operator">=</span>localhost:2379,localhost:22379,localhost:32379
+<span class="token operator">&lt;&lt;</span><span class="token string">COMMENT
+localhost:32379 is healthy: successfully committed proposal: took = 2.337471ms
+localhost:22379 is healthy: successfully committed proposal: took = 1.130717ms
+localhost:2379 is healthy: successfully committed proposal: took = 2.124843ms
+COMMENT</span>
+</code></pre>
+<p>Un-downgraded members will log info like the following</p>
+<pre class="language-"><code>{&quot;level&quot;:&quot;info&quot;,&quot;ts&quot;:&quot;2024-05-13T21:05:46.450764Z&quot;,&quot;caller&quot;:&quot;etcdserver/server.go:2633&quot;,&quot;msg&quot;:&quot;updating cluster version using v2 API&quot;,&quot;from&quot;:&quot;3.5&quot;,&quot;to&quot;:&quot;3.4&quot;}
+{&quot;level&quot;:&quot;info&quot;,&quot;ts&quot;:&quot;2024-05-13T21:05:46.452419Z&quot;,&quot;caller&quot;:&quot;membership/cluster.go:576&quot;,&quot;msg&quot;:&quot;updated cluster version&quot;,&quot;cluster-id&quot;:&quot;ef37ad9dc622a7c4&quot;,&quot;local-member-id&quot;:&quot;91bc3c398fb3c146&quot;,&quot;from&quot;:&quot;3.5&quot;,&quot;to&quot;:&quot;3.4&quot;}
+{&quot;level&quot;:&quot;info&quot;,&quot;ts&quot;:&quot;2024-05-13T21:05:46.452547Z&quot;,&quot;caller&quot;:&quot;etcdserver/server.go:2652&quot;,&quot;msg&quot;:&quot;cluster version is updated&quot;,&quot;cluster-version&quot;:&quot;3.4&quot;}
+</code></pre><h4 id="step-5-repeat-step-3-and-step-4-for-rest-of-the-members">Step 5: repeat <em>step 3</em> and <em>step 4</em> for rest of the members</h4>
+<p>When all members are downgraded, check the health status and version of the cluster:</p>
+<pre class="language-"><code class="lang-bash">endpoint health --endpoints<span class="token operator">=</span>localhost:2379,localhost:22379,localhost:32379
+<span class="token operator">&lt;&lt;</span><span class="token string">COMMENT
+localhost:2379 is healthy: successfully committed proposal: took = 492.834&#xB5;s
+localhost:22379 is healthy: successfully committed proposal: took = 1.015025ms
+localhost:32379 is healthy: successfully committed proposal: took = 1.853077ms
+COMMENT</span>
+
+<span class="token function">curl</span> http://localhost:2379/version
+<span class="token operator">&lt;&lt;</span><span class="token string">COMMENT
+{&quot;etcdserver&quot;:&quot;3.4.32&quot;,&quot;etcdcluster&quot;:&quot;3.4.0&quot;}
+COMMENT</span>
+
+<span class="token function">curl</span> http://localhost:22379/version
+<span class="token operator">&lt;&lt;</span><span class="token string">COMMENT
+{&quot;etcdserver&quot;:&quot;3.4.32&quot;,&quot;etcdcluster&quot;:&quot;3.4.0&quot;}
+COMMENT</span>
+
+<span class="token function">curl</span> http://localhost:32379/version
+<span class="token operator">&lt;&lt;</span><span class="token string">COMMENT
+{&quot;etcdserver&quot;:&quot;3.4.32&quot;,&quot;etcdcluster&quot;:&quot;3.4.0&quot;}
+COMMENT</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="_index.html" class="navigation navigation-prev " aria-label="Previous page: Downgrading">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="downgrading-etcd.html" class="navigation navigation-next " aria-label="Next page: Downgrading Etcd Clusters And Applications">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Downgrade etcd from 3.5 to 3.4","weight":6650,"description":"Processes, checklists, and notes on downgrading etcd from 3.5 to 3.4","level":"1.4.2","depth":2,"next":{"title":"Downgrading Etcd Clusters And Applications","level":"1.4.3","depth":2,"path":"downgrades/downgrading-etcd.md","ref":"downgrades/downgrading-etcd.md","articles":[]},"previous":{"title":"Downgrading","level":"1.4.1","depth":2,"path":"downgrades/_index.md","ref":"downgrades/_index.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-highlight","-livereload","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"etcd 英文文档","language":"us-en","links":{"sidebar":{"Home":"https://docs.khs1994.com"}},"gitbook":"*"},"file":{"path":"downgrades/downgrade_3_5.md","mtime":"2024-09-13T01:00:24.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-09-13T01:01:05.458Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

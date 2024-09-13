@@ -1,0 +1,2005 @@
+
+<!DOCTYPE HTML>
+<html lang="us-en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>API Reference Concurrency · etcd 英文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="api_grpc_gateway.html" />
+    
+    
+    <link rel="prev" href="_index.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://docs.khs1994.com" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" >
+            
+                <span>
+            
+                    
+                    Benchmarks
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../benchmarks/_index.html">
+            
+                <a href="../benchmarks/_index.html">
+            
+                    
+                    Benchmarks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../benchmarks/etcd-2-1-0-alpha-benchmarks.html">
+            
+                <a href="../benchmarks/etcd-2-1-0-alpha-benchmarks.html">
+            
+                    
+                    Benchmarking etcd v2.1.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../benchmarks/etcd-2-2-0-benchmarks.html">
+            
+                <a href="../benchmarks/etcd-2-2-0-benchmarks.html">
+            
+                    
+                    Benchmarking etcd v2.2.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../benchmarks/etcd-2-2-0-rc-benchmarks.html">
+            
+                <a href="../benchmarks/etcd-2-2-0-rc-benchmarks.html">
+            
+                    
+                    Benchmarking etcd v2.2.0-rc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../benchmarks/etcd-2-2-0-rc-memory-benchmarks.html">
+            
+                <a href="../benchmarks/etcd-2-2-0-rc-memory-benchmarks.html">
+            
+                    
+                    Benchmarking etcd v2.2.0-rc-memory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="../benchmarks/etcd-3-demo-benchmarks.html">
+            
+                <a href="../benchmarks/etcd-3-demo-benchmarks.html">
+            
+                    
+                    Benchmarking Etcd V 3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="../benchmarks/etcd-3-watch-memory-benchmark.html">
+            
+                <a href="../benchmarks/etcd-3-watch-memory-benchmark.html">
+            
+                    
+                    Watch Memory Usage Benchmark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.8" data-path="../benchmarks/etcd-storage-memory-benchmark.html">
+            
+                <a href="../benchmarks/etcd-storage-memory-benchmark.html">
+            
+                    
+                    Storage Memory Usage Benchmark
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Dev Guide
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="_index.html">
+            
+                <a href="_index.html">
+            
+                    
+                    Developer Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="api_concurrency_reference_v3.html">
+            
+                <a href="api_concurrency_reference_v3.html">
+            
+                    
+                    API Reference Concurrency
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="api_grpc_gateway.html">
+            
+                <a href="api_grpc_gateway.html">
+            
+                    
+                    Why G RPC Gateway
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="api_reference_v3.html">
+            
+                <a href="api_reference_v3.html">
+            
+                    
+                    API Reference
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="discovery_protocol.html">
+            
+                <a href="discovery_protocol.html">
+            
+                    
+                    Discovery Service Protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="features.html">
+            
+                <a href="features.html">
+            
+                    
+                    Etcd Features
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="grpc_naming.html">
+            
+                <a href="grpc_naming.html">
+            
+                    
+                    G RPC Naming And Discovery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="interacting_v3.html">
+            
+                <a href="interacting_v3.html">
+            
+                    
+                    Interacting With Etcd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="limit.html">
+            
+                <a href="limit.html">
+            
+                    
+                    System Limits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="local_cluster.html">
+            
+                <a href="local_cluster.html">
+            
+                    
+                    Set Up A Local Cluster
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Dev Internal
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../dev-internal/discovery_protocol.html">
+            
+                <a href="../dev-internal/discovery_protocol.html">
+            
+                    
+                    Discovery Service Protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../dev-internal/logging.html">
+            
+                <a href="../dev-internal/logging.html">
+            
+                    
+                    Logging Conventions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../dev-internal/modules.html">
+            
+                <a href="../dev-internal/modules.html">
+            
+                    
+                    Golang Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Downgrades
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../downgrades/_index.html">
+            
+                <a href="../downgrades/_index.html">
+            
+                    
+                    Downgrading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../downgrades/downgrade_3_5.html">
+            
+                <a href="../downgrades/downgrade_3_5.html">
+            
+                    
+                    Downgrade etcd from 3.5 to 3.4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../downgrades/downgrading-etcd.html">
+            
+                <a href="../downgrades/downgrading-etcd.html">
+            
+                    
+                    Downgrading Etcd Clusters And Applications
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Learning
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../learning/_index.html">
+            
+                <a href="../learning/_index.html">
+            
+                    
+                    Learning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../learning/api_guarantees.html">
+            
+                <a href="../learning/api_guarantees.html">
+            
+                    
+                    Etcd API Guarantees
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../learning/api.html">
+            
+                <a href="../learning/api.html">
+            
+                    
+                    Etcd API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../learning/data_model.html">
+            
+                <a href="../learning/data_model.html">
+            
+                    
+                    Data Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../learning/design-auth-v3.html">
+            
+                <a href="../learning/design-auth-v3.html">
+            
+                    
+                    Etcd V 3 Authentication Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../learning/design-client.html">
+            
+                <a href="../learning/design-client.html">
+            
+                    
+                    Etcd Client Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../learning/design-learner.html">
+            
+                <a href="../learning/design-learner.html">
+            
+                    
+                    Etcd Learner Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../learning/glossary.html">
+            
+                <a href="../learning/glossary.html">
+            
+                    
+                    Glossary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../learning/persistent-storage-files.html">
+            
+                <a href="../learning/persistent-storage-files.html">
+            
+                    
+                    Etcd Persistent Storage Files
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../learning/why.html">
+            
+                <a href="../learning/why.html">
+            
+                    
+                    Etcd Versus Other Key Value Stores
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Op Guide
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" >
+            
+                <span>
+            
+                    
+                    Authentication
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../op-guide/authentication/_index.html">
+            
+                <a href="../op-guide/authentication/_index.html">
+            
+                    
+                    Authentication Guides
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../op-guide/authentication/authentication.html">
+            
+                <a href="../op-guide/authentication/authentication.html">
+            
+                    
+                    Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="../op-guide/authentication/rbac.html">
+            
+                <a href="../op-guide/authentication/rbac.html">
+            
+                    
+                    Role Based Access Control
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../op-guide/_index.html">
+            
+                <a href="../op-guide/_index.html">
+            
+                    
+                    Operations Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../op-guide/clustering.html">
+            
+                <a href="../op-guide/clustering.html">
+            
+                    
+                    Clustering Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../op-guide/configuration.html">
+            
+                <a href="../op-guide/configuration.html">
+            
+                    
+                    Configuration Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../op-guide/container.html">
+            
+                <a href="../op-guide/container.html">
+            
+                    
+                    Run Etcd Clusters Inside Containers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../op-guide/data_corruption.html">
+            
+                <a href="../op-guide/data_corruption.html">
+            
+                    
+                    Data Corruption
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../op-guide/failures.html">
+            
+                <a href="../op-guide/failures.html">
+            
+                    
+                    Failure Modes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../op-guide/gateway.html">
+            
+                <a href="../op-guide/gateway.html">
+            
+                    
+                    Etcd Gateway
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../op-guide/grpc_proxy.html">
+            
+                <a href="../op-guide/grpc_proxy.html">
+            
+                    
+                    G RPC Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../op-guide/hardware.html">
+            
+                <a href="../op-guide/hardware.html">
+            
+                    
+                    Hardware Recommendations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../op-guide/kubernetes.html">
+            
+                <a href="../op-guide/kubernetes.html">
+            
+                    
+                    Run Etcd Clusters As A Kubernetes Stateful Set
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="../op-guide/maintenance.html">
+            
+                <a href="../op-guide/maintenance.html">
+            
+                    
+                    Maintenance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="../op-guide/monitoring.html">
+            
+                <a href="../op-guide/monitoring.html">
+            
+                    
+                    Monitoring Etcd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="../op-guide/performance.html">
+            
+                <a href="../op-guide/performance.html">
+            
+                    
+                    Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.15" data-path="../op-guide/recovery.html">
+            
+                <a href="../op-guide/recovery.html">
+            
+                    
+                    Disaster Recovery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.16" data-path="../op-guide/runtime-configuration.html">
+            
+                <a href="../op-guide/runtime-configuration.html">
+            
+                    
+                    Runtime Reconfiguration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.17" data-path="../op-guide/runtime-reconf-design.html">
+            
+                <a href="../op-guide/runtime-reconf-design.html">
+            
+                    
+                    Design Of Runtime Reconfiguration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.18" data-path="../op-guide/security.html">
+            
+                <a href="../op-guide/security.html">
+            
+                    
+                    Transport Security Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.19" data-path="../op-guide/supported-platform.html">
+            
+                <a href="../op-guide/supported-platform.html">
+            
+                    
+                    Supported Platforms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.20" data-path="../op-guide/versioning.html">
+            
+                <a href="../op-guide/versioning.html">
+            
+                    
+                    Versioning
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Triage
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../triage/_index.html">
+            
+                <a href="../triage/_index.html">
+            
+                    
+                    Triage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../triage/issues.html">
+            
+                <a href="../triage/issues.html">
+            
+                    
+                    Issue Triage Guidelines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../triage/PRs.html">
+            
+                <a href="../triage/PRs.html">
+            
+                    
+                    PR Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../tutorials/_index.html">
+            
+                <a href="../tutorials/_index.html">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../tutorials/how-to-check-cluster-status.html">
+            
+                <a href="../tutorials/how-to-check-cluster-status.html">
+            
+                    
+                    How To Check Cluster Status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../tutorials/how-to-conduct-elections.html">
+            
+                <a href="../tutorials/how-to-conduct-elections.html">
+            
+                    
+                    How To Conduct Leader Election In Etcd Cluster
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../tutorials/how-to-create-lease.html">
+            
+                <a href="../tutorials/how-to-create-lease.html">
+            
+                    
+                    How To Create Lease
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../tutorials/how-to-create-locks.html">
+            
+                <a href="../tutorials/how-to-create-locks.html">
+            
+                    
+                    How To Create Locks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../tutorials/how-to-deal-with-membership.html">
+            
+                <a href="../tutorials/how-to-deal-with-membership.html">
+            
+                    
+                    How To Add And Remove Members
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../tutorials/how-to-delete-keys.html">
+            
+                <a href="../tutorials/how-to-delete-keys.html">
+            
+                    
+                    How To Delete Keys
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../tutorials/how-to-get-key-by-prefix.html">
+            
+                <a href="../tutorials/how-to-get-key-by-prefix.html">
+            
+                    
+                    How To Get Keys By Prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../tutorials/how-to-migrate.html">
+            
+                <a href="../tutorials/how-to-migrate.html">
+            
+                    
+                    How To Migrate Etcd From V 2 To V 3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="../tutorials/how-to-save-database.html">
+            
+                <a href="../tutorials/how-to-save-database.html">
+            
+                    
+                    How To Save The Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="../tutorials/how-to-setup-cluster.html">
+            
+                <a href="../tutorials/how-to-setup-cluster.html">
+            
+                    
+                    How To Set Up A Demo Etcd Cluster
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.12" data-path="../tutorials/how-to-transactional-write.html">
+            
+                <a href="../tutorials/how-to-transactional-write.html">
+            
+                    
+                    How To Make Multiple Writes In A Transaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.13" data-path="../tutorials/how-to-watch-keys.html">
+            
+                <a href="../tutorials/how-to-watch-keys.html">
+            
+                    
+                    How To Watch Keys
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.14" data-path="../tutorials/reading-from-etcd.html">
+            
+                <a href="../tutorials/reading-from-etcd.html">
+            
+                    
+                    Reading From Etcd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.15" data-path="../tutorials/writing-to-etcd.html">
+            
+                <a href="../tutorials/writing-to-etcd.html">
+            
+                    
+                    Writing To Etcd
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    Upgrades
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../upgrades/_index.html">
+            
+                <a href="../upgrades/_index.html">
+            
+                    
+                    Upgrading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../upgrades/upgrade_3_0.html">
+            
+                <a href="../upgrades/upgrade_3_0.html">
+            
+                    
+                    Upgrade etcd from 2.3 to 3.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../upgrades/upgrade_3_1.html">
+            
+                <a href="../upgrades/upgrade_3_1.html">
+            
+                    
+                    Upgrade etcd from 3.0 to 3.1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../upgrades/upgrade_3_2.html">
+            
+                <a href="../upgrades/upgrade_3_2.html">
+            
+                    
+                    Upgrade etcd from 3.1 to 3.2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../upgrades/upgrade_3_3.html">
+            
+                <a href="../upgrades/upgrade_3_3.html">
+            
+                    
+                    Upgrade etcd from 3.2 to 3.3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../upgrades/upgrade_3_4.html">
+            
+                <a href="../upgrades/upgrade_3_4.html">
+            
+                    
+                    Upgrade etcd from 3.3 to 3.4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../upgrades/upgrade_3_5.html">
+            
+                <a href="../upgrades/upgrade_3_5.html">
+            
+                    
+                    Upgrade etcd from 3.4 to 3.5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../upgrades/upgrading-etcd.html">
+            
+                <a href="../upgrades/upgrading-etcd.html">
+            
+                    
+                    Upgrading Etcd Clusters And Applications
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../demo.html">
+            
+                <a href="../demo.html">
+            
+                    
+                    Demo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../faq.html">
+            
+                <a href="../faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../install.html">
+            
+                <a href="../install.html">
+            
+                    
+                    Install
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../integrations.html">
+            
+                <a href="../integrations.html">
+            
+                    
+                    Libraries And Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../metrics.html">
+            
+                <a href="../metrics.html">
+            
+                    
+                    Metrics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../quickstart.html">
+            
+                <a href="../quickstart.html">
+            
+                    
+                    Quickstart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    v3.5 docs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../reporting_bugs.html">
+            
+                <a href="../reporting_bugs.html">
+            
+                    
+                    Reporting Bugs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../tuning.html">
+            
+                <a href="../tuning.html">
+            
+                    
+                    Tuning
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >API Reference Concurrency</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>This API reference is autogenerated from the named <code>.proto</code> files.</p>
+<h5 id="service-lock-serveretcdserverapiv3lockv3lockpbv3lockproto">service <code>Lock</code> (server/etcdserver/api/v3lock/v3lockpb/v3lock.proto)</h5>
+<p>The lock service exposes client-side locking facilities as a gRPC interface.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Request Type</th>
+<th>Response Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lock</td>
+<td>LockRequest</td>
+<td>LockResponse</td>
+<td>Lock acquires a distributed shared lock on a given named lock. On success, it will return a unique key that exists so long as the lock is held by the caller. This key can be used in conjunction with transactions to safely ensure updates to etcd only occur while holding lock ownership. The lock is held until Unlock is called on the key or the lease associate with the owner expires.</td>
+</tr>
+<tr>
+<td>Unlock</td>
+<td>UnlockRequest</td>
+<td>UnlockResponse</td>
+<td>Unlock takes a key returned by Lock and releases the hold on lock. The next Lock caller waiting for the lock will then be woken up and given ownership of the lock.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="message-lockrequest-serveretcdserverapiv3lockv3lockpbv3lockproto">message <code>LockRequest</code> (server/etcdserver/api/v3lock/v3lockpb/v3lock.proto)</h5>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>name is the identifier for the distributed shared lock to be acquired.</td>
+<td>bytes</td>
+</tr>
+<tr>
+<td>lease</td>
+<td>lease is the ID of the lease that will be attached to ownership of the lock. If the lease expires or is revoked and currently holds the lock, the lock is automatically released. Calls to Lock with the same lease will be treated as a single acquisition; locking twice with the same lease is a no-op.</td>
+<td>int64</td>
+</tr>
+</tbody>
+</table>
+<h5 id="message-lockresponse-serveretcdserverapiv3lockv3lockpbv3lockproto">message <code>LockResponse</code> (server/etcdserver/api/v3lock/v3lockpb/v3lock.proto)</h5>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>header</td>
+<td></td>
+<td>etcdserverpb.ResponseHeader</td>
+</tr>
+<tr>
+<td>key</td>
+<td>key is a key that will exist on etcd for the duration that the Lock caller owns the lock. Users should not modify this key or the lock may exhibit undefined behavior.</td>
+<td>bytes</td>
+</tr>
+</tbody>
+</table>
+<h5 id="message-unlockrequest-serveretcdserverapiv3lockv3lockpbv3lockproto">message <code>UnlockRequest</code> (server/etcdserver/api/v3lock/v3lockpb/v3lock.proto)</h5>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>key is the lock ownership key granted by Lock.</td>
+<td>bytes</td>
+</tr>
+</tbody>
+</table>
+<h5 id="message-unlockresponse-serveretcdserverapiv3lockv3lockpbv3lockproto">message <code>UnlockResponse</code> (server/etcdserver/api/v3lock/v3lockpb/v3lock.proto)</h5>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>header</td>
+<td></td>
+<td>etcdserverpb.ResponseHeader</td>
+</tr>
+</tbody>
+</table>
+<h5 id="service-election-serveretcdserverapiv3electionv3electionpbv3electionproto">service <code>Election</code> (server/etcdserver/api/v3election/v3electionpb/v3election.proto)</h5>
+<p>The election service exposes client-side election facilities as a gRPC interface.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Request Type</th>
+<th>Response Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Campaign</td>
+<td>CampaignRequest</td>
+<td>CampaignResponse</td>
+<td>Campaign waits to acquire leadership in an election, returning a LeaderKey representing the leadership if successful. The LeaderKey can then be used to issue new values on the election, transactionally guard API requests on leadership still being held, and resign from the election.</td>
+</tr>
+<tr>
+<td>Proclaim</td>
+<td>ProclaimRequest</td>
+<td>ProclaimResponse</td>
+<td>Proclaim updates the leader&apos;s posted value with a new value.</td>
+</tr>
+<tr>
+<td>Leader</td>
+<td>LeaderRequest</td>
+<td>LeaderResponse</td>
+<td>Leader returns the current election proclamation, if any.</td>
+</tr>
+<tr>
+<td>Observe</td>
+<td>LeaderRequest</td>
+<td>LeaderResponse</td>
+<td>Observe streams election proclamations in-order as made by the election&apos;s elected leaders.</td>
+</tr>
+<tr>
+<td>Resign</td>
+<td>ResignRequest</td>
+<td>ResignResponse</td>
+<td>Resign releases election leadership so other campaigners may acquire leadership on the election.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="message-campaignrequest-serveretcdserverapiv3electionv3electionpbv3electionproto">message <code>CampaignRequest</code> (server/etcdserver/api/v3election/v3electionpb/v3election.proto)</h5>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>name is the election&apos;s identifier for the campaign.</td>
+<td>bytes</td>
+</tr>
+<tr>
+<td>lease</td>
+<td>lease is the ID of the lease attached to leadership of the election. If the lease expires or is revoked before resigning leadership, then the leadership is transferred to the next campaigner, if any.</td>
+<td>int64</td>
+</tr>
+<tr>
+<td>value</td>
+<td>value is the initial proclaimed value set when the campaigner wins the election.</td>
+<td>bytes</td>
+</tr>
+</tbody>
+</table>
+<h5 id="message-campaignresponse-serveretcdserverapiv3electionv3electionpbv3electionproto">message <code>CampaignResponse</code> (server/etcdserver/api/v3election/v3electionpb/v3election.proto)</h5>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>header</td>
+<td></td>
+<td>etcdserverpb.ResponseHeader</td>
+</tr>
+<tr>
+<td>leader</td>
+<td>leader describes the resources used for holding leadereship of the election.</td>
+<td>LeaderKey</td>
+</tr>
+</tbody>
+</table>
+<h5 id="message-leaderkey-serveretcdserverapiv3electionv3electionpbv3electionproto">message <code>LeaderKey</code> (server/etcdserver/api/v3election/v3electionpb/v3election.proto)</h5>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>name is the election identifier that corresponds to the leadership key.</td>
+<td>bytes</td>
+</tr>
+<tr>
+<td>key</td>
+<td>key is an opaque key representing the ownership of the election. If the key is deleted, then leadership is lost.</td>
+<td>bytes</td>
+</tr>
+<tr>
+<td>rev</td>
+<td>rev is the creation revision of the key. It can be used to test for ownership of an election during transactions by testing the key&apos;s creation revision matches rev.</td>
+<td>int64</td>
+</tr>
+<tr>
+<td>lease</td>
+<td>lease is the lease ID of the election leader.</td>
+<td>int64</td>
+</tr>
+</tbody>
+</table>
+<h5 id="message-leaderrequest-serveretcdserverapiv3electionv3electionpbv3electionproto">message <code>LeaderRequest</code> (server/etcdserver/api/v3election/v3electionpb/v3election.proto)</h5>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>name is the election identifier for the leadership information.</td>
+<td>bytes</td>
+</tr>
+</tbody>
+</table>
+<h5 id="message-leaderresponse-serveretcdserverapiv3electionv3electionpbv3electionproto">message <code>LeaderResponse</code> (server/etcdserver/api/v3election/v3electionpb/v3election.proto)</h5>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>header</td>
+<td></td>
+<td>etcdserverpb.ResponseHeader</td>
+</tr>
+<tr>
+<td>kv</td>
+<td>kv is the key-value pair representing the latest leader update.</td>
+<td>mvccpb.KeyValue</td>
+</tr>
+</tbody>
+</table>
+<h5 id="message-proclaimrequest-serveretcdserverapiv3electionv3electionpbv3electionproto">message <code>ProclaimRequest</code> (server/etcdserver/api/v3election/v3electionpb/v3election.proto)</h5>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>leader</td>
+<td>leader is the leadership hold on the election.</td>
+<td>LeaderKey</td>
+</tr>
+<tr>
+<td>value</td>
+<td>value is an update meant to overwrite the leader&apos;s current value.</td>
+<td>bytes</td>
+</tr>
+</tbody>
+</table>
+<h5 id="message-proclaimresponse-serveretcdserverapiv3electionv3electionpbv3electionproto">message <code>ProclaimResponse</code> (server/etcdserver/api/v3election/v3electionpb/v3election.proto)</h5>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>header</td>
+<td></td>
+<td>etcdserverpb.ResponseHeader</td>
+</tr>
+</tbody>
+</table>
+<h5 id="message-resignrequest-serveretcdserverapiv3electionv3electionpbv3electionproto">message <code>ResignRequest</code> (server/etcdserver/api/v3election/v3electionpb/v3election.proto)</h5>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>leader</td>
+<td>leader is the leadership to relinquish by resignation.</td>
+<td>LeaderKey</td>
+</tr>
+</tbody>
+</table>
+<h5 id="message-resignresponse-serveretcdserverapiv3electionv3electionpbv3electionproto">message <code>ResignResponse</code> (server/etcdserver/api/v3election/v3electionpb/v3election.proto)</h5>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>header</td>
+<td></td>
+<td>etcdserverpb.ResponseHeader</td>
+</tr>
+</tbody>
+</table>
+<h5 id="message-event-apimvccpbkvproto">message <code>Event</code> (api/mvccpb/kv.proto)</h5>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>type is the kind of event. If type is a PUT, it indicates new data has been stored to the key. If type is a DELETE, it indicates the key was deleted.</td>
+<td>EventType</td>
+</tr>
+<tr>
+<td>kv</td>
+<td>kv holds the KeyValue for the event. A PUT event contains current kv pair. A PUT event with kv.Version=1 indicates the creation of a key. A DELETE/EXPIRE event contains the deleted key with its modification revision set to the revision of deletion.</td>
+<td>KeyValue</td>
+</tr>
+<tr>
+<td>prev_kv</td>
+<td>prev_kv holds the key-value pair before the event happens.</td>
+<td>KeyValue</td>
+</tr>
+</tbody>
+</table>
+<h5 id="message-keyvalue-apimvccpbkvproto">message <code>KeyValue</code> (api/mvccpb/kv.proto)</h5>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>key is the key in bytes. An empty key is not allowed.</td>
+<td>bytes</td>
+</tr>
+<tr>
+<td>create_revision</td>
+<td>create_revision is the revision of last creation on this key.</td>
+<td>int64</td>
+</tr>
+<tr>
+<td>mod_revision</td>
+<td>mod_revision is the revision of last modification on this key.</td>
+<td>int64</td>
+</tr>
+<tr>
+<td>version</td>
+<td>version is the version of the key. A deletion resets the version to zero and any modification of the key increases its version.</td>
+<td>int64</td>
+</tr>
+<tr>
+<td>value</td>
+<td>value is the value held by the key, in bytes.</td>
+<td>bytes</td>
+</tr>
+<tr>
+<td>lease</td>
+<td>lease is the ID of the lease that attached to key. When the attached lease expires, the key will be deleted. If lease is 0, then no lease is attached to the key.</td>
+<td>int64</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="_index.html" class="navigation navigation-prev " aria-label="Previous page: Developer Guide">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="api_grpc_gateway.html" class="navigation navigation-next " aria-label="Next page: Why G RPC Gateway">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"API Reference Concurrency","level":"1.2.2","depth":2,"next":{"title":"Why G RPC Gateway","level":"1.2.3","depth":2,"path":"dev-guide/api_grpc_gateway.md","ref":"dev-guide/api_grpc_gateway.md","articles":[]},"previous":{"title":"Developer Guide","level":"1.2.1","depth":2,"path":"dev-guide/_index.md","ref":"dev-guide/_index.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-highlight","-livereload","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"etcd 英文文档","language":"us-en","links":{"sidebar":{"Home":"https://docs.khs1994.com"}},"gitbook":"*"},"file":{"path":"dev-guide/api_concurrency_reference_v3.md","mtime":"2024-09-13T01:00:24.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-09-13T01:01:05.458Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
